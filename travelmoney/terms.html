@@ -42,7 +42,7 @@
                 <h2>제2조 (데이터 관리 및 사용자의 책임)</h2>
                 <ul>
                     <li><strong>데이터 로컬 저장</strong>: 서비스의 모든 데이터(여행 일정, 지출 및 수입 내역, 사진 보관함, 로드맵 지도 발자취, 앱 잠금 비밀번호 설정 등)는 이용자의 기기 내부에만 저장됩니다.</li>
-                    <li><strong>사용자의 책임</strong>: 기기 분실, 앱 삭제, 데이터 초기화, 비밀번호 분실, 백업 미실행으로 인한 데이터 손실 및 피해에 대한 책임은 전적으로 이용자에게 있습니다. 개발자는 외부 서버에 데이터를 수집·저장하지 않으므로 복구 의무를 지지 않습니다.</li>
+                    <li><strong>사용자의 관리 책임</strong>: 단말기 분실, 앱 삭제, 데이터 초기화, 비밀번호 분실, 백업 파일 미실행 등으로 인한 데이터 손실 및 피해에 대한 책임은 전적으로 이용자에게 있습니다. 개발자는 사용자의 개인 데이터를 외부 서버에 수집·저장하지 않으므로 복구 의무를 지지 않습니다.</li>
                     <li><strong>백업 기능 이용</strong>: 이용자는 앱에서 제공하는 암호화 백업 및 복원 기능을 활용하여 스스로 데이터를 안전하게 보관할 책임이 있습니다.</li>
                 </ul>
 
@@ -67,7 +67,7 @@
                 </ul>
             </div>
 
-            <!-- English Terms (Full Length Translation) -->
+            <!-- English Terms -->
             <div id="terms-en" class="terms-lang-block" style="display: none;">
                 <h1>Terms of Service (TravelMoney)</h1>
                 <p><strong>Developer: FlosisLab</strong> | <strong>Last Updated: October 3, 2026</strong></p>
@@ -105,7 +105,7 @@
                 </ul>
             </div>
 
-            <!-- Japanese Terms (Full Length Translation) -->
+            <!-- Japanese Terms -->
             <div id="terms-ja" class="terms-lang-block" style="display: none;">
                 <h1>利用規約 (TravelMoney)</h1>
                 <p><strong>開発者: FlosisLab</strong> | <strong>最終改定日: 2026年10月3日</strong></p>
@@ -159,6 +159,12 @@
             ja: document.getElementById('terms-ja')
         };
 
+        const termsDict = {
+            ko: { backToMain: "← 메인으로 돌아가기" },
+            en: { backToMain: "← Back to Main" },
+            ja: { backToMain: "← メインへ戻る" }
+        };
+
         function setTermsLanguage(lang) {
             Object.keys(termsBlocks).forEach(key => {
                 if (termsBlocks[key]) {
@@ -168,6 +174,15 @@
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
+
+            const dict = termsDict[lang] || termsDict.ko;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (dict[key]) {
+                    el.textContent = dict[key];
+                }
+            });
+
             localStorage.setItem('terms_lang', lang);
         }
 

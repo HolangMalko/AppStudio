@@ -50,6 +50,7 @@ const translations = {
         app3Title: "Lifestyle App",
         app3Desc: "소중한 순간을 기록하는 차세대 라이프스타일 프로젝트가 곧 찾아옵니다.",
 
+        btnViewDetail: "✈️ TravelMoney 상세보기",
         navPrivacy: "TravelMoney 개인정보 처리방침",
         navTerms: "TravelMoney 이용약관",
         navSupport: "문의하기 (Support)",
@@ -106,6 +107,7 @@ const translations = {
         app3Title: "Lifestyle App",
         app3Desc: "A next-generation lifestyle companion app designed for capturing precious memories is coming soon.",
 
+        btnViewDetail: "✈️ View TravelMoney Details",
         navPrivacy: "TravelMoney Privacy Policy",
         navTerms: "TravelMoney Terms of Service",
         navSupport: "Contact Support",
@@ -152,7 +154,7 @@ const translations = {
         guide1Desc: "ウィジェットのカメラアイコンを押してレシートを撮影するとスマートAIが金額を自動認識します。",
         guide2Title: "2. ロードマップ足跡の残しかた",
         guide2Desc: "撮影した写真は現在のGPS住所とともにロードマップ上にタイムライン保存されます。",
-        guide3Title: "3. 予算と精算의 管理",
+        guide3Title: "3. 予算と精算の管理",
         guide3Desc: "旅行予算を設定し、同行者との精算割合を調整して日別の残額をモニタリングできます。",
 
         sectionPortfolioTitle: "FlosisLab ラインナップ",
@@ -162,6 +164,7 @@ const translations = {
         app3Title: "Lifestyle App",
         app3Desc: "大切な瞬間を記録する次世代ライフスタイルプロジェクトが間もなく登場します。",
 
+        btnViewDetail: "✈️ TravelMoney 詳細を見る",
         navPrivacy: "TravelMoney プライバシーポリシー",
         navTerms: "TravelMoney 利用規約",
         navSupport: "お問い合わせ",
