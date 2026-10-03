@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelMoney - FlosisLab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="travelmoney/assets/images/app-icon.webp">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="brand-logo">
+                <img src="travelmoney/assets/images/main_icon.png" alt="FlosisLab Logo">
+                <span data-i18n="brandName">FlosisLab</span>
+            </a>
+            <div class="lang-selector">
+                <button class="lang-btn active" data-lang="ko">🇰🇷 KR</button>
+                <button class="lang-btn" data-lang="en">🇺🇸 EN</button>
+                <button class="lang-btn" data-lang="ja">🇯🇵 JP</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title" data-i18n="heroTitle">스마트한 여행 지출 관리 & 순간의 기록</h1>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">
+                1초 영수증 스캔, 원터치 지도 발자취 기록, 편리한 위젯.
+            </p>
+
+            <a href="#" class="btn-primary" onclick="alert('Google Play Store 출시 준비 중입니다!'); return false;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span>🛒</span>
+                    <span data-i18n="btnPlayStoreText">Google Play 다운로드</span>
+                </div>
+                <span class="btn-subtext" data-i18n="btnPlayStoreSubtext">(출시 준비 중)</span>
+            </a>
+        </section>
+
+        <!-- Interactive Sliding App Screenshot Carousel Gallery -->
+        <section class="section-block">
+            <h2 class="section-title" data-i18n="sectionScreenshotsTitle">실제 앱 구동 화면 미리보기</h2>
+
+            <div class="carousel-wrapper">
+                <button id="carousel-prev" class="carousel-nav-btn prev">◀</button>
+                <button id="carousel-next" class="carousel-nav-btn next">▶</button>
+
+                <div class="carousel-slide-container">
+                    <div id="carousel-track" class="carousel-slides">
+                        <div class="carousel-slide" data-i18n-caption="screenTitleMain">
+                            <img src="travelmoney/assets/images/app_TravelMoney/Screenshot_20261003-125315_TravelMoney.jpg" alt="Main Trip Screen">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitleRoadmap">
+                            <img src="travelmoney/assets/images/app_TravelMoney/PDF (1).jpg" alt="Roadmap Timeline Screen">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitleRouteMap">
+                            <img src="travelmoney/assets/images/app_TravelMoney/Screenshot_20261003-125852_TravelMoney.jpg" alt="GPS Route Map Screen">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitleExpenses">
+                            <img src="travelmoney/assets/images/app_TravelMoney/Screenshot_20261003-125350_TravelMoney.jpg" alt="Expenses List Screen">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitleOCR">
+                            <img src="travelmoney/assets/images/app_TravelMoney/Screenshot_20261003-125403_TravelMoney.jpg" alt="Expense Log Sheet">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitleSettlement">
+                            <img src="travelmoney/assets/images/app_TravelMoney/Screenshot_20261003-125426_TravelMoney.jpg" alt="Settlement Manager Screen">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitleStats">
+                            <img src="travelmoney/assets/images/app_TravelMoney/Screenshot_20261003-125433_TravelMoney.jpg" alt="Statistics Screen">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitleBudget">
+                            <img src="travelmoney/assets/images/app_TravelMoney/Screenshot_20261003-130308_TravelMoney.jpg" alt="Budget Management Screen">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitlePdf">
+                            <img src="travelmoney/assets/images/app_TravelMoney/PDF (3).jpg" alt="PDF Export Report">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitleChecklist">
+                            <img src="travelmoney/assets/images/app_TravelMoney/Screenshot_20261003-125341_TravelMoney.jpg" alt="Checklist Screen">
+                        </div>
+                        <div class="carousel-slide" data-i18n-caption="screenTitleExchange">
+                            <img src="travelmoney/assets/images/app_TravelMoney/Screenshot_20261003-125327_TravelMoney.jpg" alt="Currency Exchange Calculator">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="carousel-caption" class="carousel-caption" data-i18n="screenTitleMain">✈️ 여행 일정 및 가계부 관리</div>
+
+                <div class="carousel-dots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section class="section-block">
+            <h2 class="section-title" data-i18n="sectionFeaturesTitle">주요 핵심 기능</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3 data-i18n="feat1Title">🧾 1초 영수증 스캔</h3>
+                    <p data-i18n="feat1Desc">카메라로 촬영하면 스마트 AI 스캔이 결제 금액을 1초 만에 자동 인식합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-i18n="feat2Title">📍 원터치 로드맵 기록</h3>
+                    <p data-i18n="feat2Desc">GPS 좌표와 함께 여행지 사진을 지도의 타임라인에 기록합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-i18n="feat3Title">📱 편리한 위젯</h3>
+                    <p data-i18n="feat3Desc">홈 화면에서 오늘 사용 금액과 남은 예산을 실시간으로 모니터링합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-i18n="feat4Title">💱 다국어 환율 & 정산</h3>
+                    <p data-i18n="feat4Desc">실시간 환율 변환 및 여행 동행자와의 분할 정산 기능을 제공합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Widget Preview Showcase Section -->
+        <section class="section-block">
+            <h2 class="section-title" data-i18n="sectionWidgetsTitle">스마트 홈 화면 위젯</h2>
+
+            <div class="widget-carousel-wrapper">
+                <button id="widget-prev" class="carousel-nav-btn prev">◀</button>
+                <button id="widget-next" class="carousel-nav-btn next">▶</button>
+
+                <div class="widget-slide-container">
+                    <div id="widget-track" class="widget-slides">
+                        <div class="widget-slide" data-i18n-caption="widgetTitleReceipt">
+                            <img src="travelmoney/assets/images/preview_quick_check_in_widget.png" alt="Receipt Scan Widget Preview">
+                        </div>
+                        <div class="widget-slide" data-i18n-caption="widgetTitleRoadmap">
+                            <img src="travelmoney/assets/images/preview_quick_roadmap_widget.png" alt="Roadmap Footprint Widget Preview">
+                        </div>
+                        <div class="widget-slide" data-i18n-caption="widgetTitleMoney">
+                            <img src="travelmoney/assets/images/preview_travel_money_widget.png" alt="Travel Money Widget Preview">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="widget-caption" class="widget-caption" data-i18n="widgetTitleReceipt">🧾 빠른 영수증 스캔 위젯</div>
+
+                <div class="carousel-dots">
+                    <span class="widget-dot carousel-dot active"></span>
+                    <span class="widget-dot carousel-dot"></span>
+                    <span class="widget-dot carousel-dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Guide Section -->
+        <section class="section-block">
+            <h2 class="section-title" data-i18n="sectionGuideTitle">초간단 사용 가이드</h2>
+            <div class="guide-list">
+                <div class="guide-item">
+                    <span class="guide-badge">1</span>
+                    <div>
+                        <h4 style="font-size: 1rem; margin-bottom: 4px;" data-i18n="guide1Title">1. 빠른 영수증 스캔하는 법</h4>
+                        <p data-i18n="guide1Desc">위젯 아이콘이나 지출 추가 버튼을 눌러 영수증을 촬영하면, 스마트 AI가 결제 금액을 자동 인식하여 저장 준비를 마칩니다.</p>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-badge">2</span>
+                    <div>
+                        <h4 style="font-size: 1rem; margin-bottom: 4px;" data-i18n="guide2Title">2. 로드맵 지도 발자취 남기기</h4>
+                        <p data-i18n="guide2Desc">여행지에서 사진을 찍으면 현재 GPS 주소와 함께 로드맵 지도 상에 감성 기록이 자동 저장됩니다.</p>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-badge">3</span>
+                    <div>
+                        <h4 style="font-size: 1rem; margin-bottom: 4px;" data-i18n="guide3Title">3. 예산 및 동행자 정산 관리</h4>
+                        <p data-i18n="guide3Desc">기본 예산을 설정하고 동행자와의 지출 분할 비율을 적용하여 남은 예산을 실시간 모니터링하세요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="travelmoney/privacy-policy.html" data-i18n="navPrivacy">TravelMoney 개인정보 처리방침</a>
+                <a href="travelmoney/terms.html" data-i18n="navTerms">TravelMoney 이용약관</a>
+                <a href="mailto:flosislab@gmail.com" data-i18n="navSupport">문의하기 (Support)</a>
+            </div>
+            <p data-i18n="footerRights">© 2026 FlosisLab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
