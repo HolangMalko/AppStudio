@@ -67,7 +67,7 @@
                 </ul>
             </div>
 
-            <!-- English Terms -->
+            <!-- English Terms (Full Unabridged Translation) -->
             <div id="terms-en" class="terms-lang-block" style="display: none;">
                 <h1>Terms of Service (TravelMoney)</h1>
                 <p><strong>Developer: FlosisLab</strong> | <strong>Last Updated: October 3, 2026</strong></p>
@@ -79,7 +79,7 @@
 
                 <h2>Article 2 (Data Management & User Responsibility)</h2>
                 <ul>
-                    <li><strong>Local Data Storage</strong>: All Service data (trip itineraries, expense/income logs, photo vault, roadmap footprints, app lock passwords) is stored exclusively on the user's local device.</li>
+                    <li><strong>Local Data Storage</strong>: All Service data (trip itineraries, expense and income logs, photo vault, roadmap footprints, app lock passwords) is stored exclusively on the user's local device.</li>
                     <li><strong>User Responsibility</strong>: Users bear full responsibility for data loss caused by lost devices, app uninstallation, data reset, forgotten passwords, or unperformed backups. The Developer does not store data on external servers and cannot restore lost records.</li>
                     <li><strong>Backup Obligation</strong>: Users are advised to utilize the built-in encrypted local backup and restore feature to safeguard their records.</li>
                 </ul>
@@ -105,7 +105,7 @@
                 </ul>
             </div>
 
-            <!-- Japanese Terms -->
+            <!-- Japanese Terms (Full Unabridged Translation) -->
             <div id="terms-ja" class="terms-lang-block" style="display: none;">
                 <h1>利用規約 (TravelMoney)</h1>
                 <p><strong>開発者: FlosisLab</strong> | <strong>最終改定日: 2026年10月3日</strong></p>
@@ -166,16 +166,17 @@
         };
 
         function setTermsLanguage(lang) {
+            const validLang = (lang === 'ja' || lang === 'jp') ? 'ja' : (lang === 'en' ? 'en' : 'ko');
             Object.keys(termsBlocks).forEach(key => {
                 if (termsBlocks[key]) {
-                    termsBlocks[key].style.display = (key === lang) ? 'block' : 'none';
+                    termsBlocks[key].style.display = (key === validLang) ? 'block' : 'none';
                 }
             });
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === lang);
+                btn.classList.toggle('active', btn.dataset.lang === validLang || (btn.dataset.lang === 'ja' && validLang === 'ja'));
             });
 
-            const dict = termsDict[lang] || termsDict.ko;
+            const dict = termsDict[validLang] || termsDict.ko;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.dataset.i18n;
                 if (dict[key]) {
@@ -183,11 +184,16 @@
                 }
             });
 
-            localStorage.setItem('terms_lang', lang);
+            localStorage.setItem('terms_lang', validLang);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('terms_lang') || 'ko';
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            const targetLang = (urlLang === 'ja' || urlLang === 'jp') ? 'ja' : (urlLang === 'en' ? 'en' : (urlLang === 'ko' ? 'ko' : null));
+            const navLang = navigator.language.startsWith('ja') ? 'ja' : (navigator.language.startsWith('en') ? 'en' : 'ko');
+            const savedLang = targetLang || localStorage.getItem('terms_lang') || navLang;
+
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.addEventListener('click', () => setTermsLanguage(btn.dataset.lang));
             });
