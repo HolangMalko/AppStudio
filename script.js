@@ -152,7 +152,7 @@ const translations = {
         guide1Desc: "ウィジェットのカメラアイコンを押してレシートを撮影するとスマートAIが金額を自動認識します。",
         guide2Title: "2. ロードマップ足跡の残しかた",
         guide2Desc: "撮影した写真は現在のGPS住所とともにロードマップ上にタイムライン保存されます。",
-        guide3Title: "3. 予算と精算の管理",
+        guide3Title: "3. 予算と精算의 管理",
         guide3Desc: "旅行予算を設定し、同行者との精算割合を調整して日別の残額をモニタリングできます。",
 
         sectionPortfolioTitle: "FlosisLab ラインナップ",
@@ -211,6 +211,19 @@ function goToSlide(index) {
     updateCarousel();
 }
 
+// Dynamic Screenshot Image Switcher per Selected Language (ko / en / jp)
+function updateScreenshotImages(lang) {
+    const prefix = (lang === 'ja') ? 'jp' : lang; // 'ko', 'en', or 'jp'
+    document.querySelectorAll('.carousel-slide').forEach(slide => {
+        const slideNum = slide.dataset.slideNum;
+        const img = slide.querySelector('img');
+        const basePath = slide.dataset.basePath || 'travelmoney/assets/images/app_TravelMoney/Screenshots';
+        if (slideNum && img) {
+            img.src = `${basePath}/${prefix}_${slideNum}.jpg`;
+        }
+    });
+}
+
 // Widget Carousel (3 Widgets: Receipt, Roadmap, TravelMoney)
 let currentWidgetIndex = 0;
 const totalWidgetSlides = 3;
@@ -267,6 +280,7 @@ function setLanguage(lang) {
         }
     });
 
+    updateScreenshotImages(lang);
     updateCarousel();
     updateWidgetCarousel();
 }
