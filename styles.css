@@ -5,7 +5,7 @@
     --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     --bg-dark: #0f172a;
     --bg-card: #1e293b;
-    --text-primary: #f8fafc;
+    --text-primary: #F8FAFC;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
     --border-color: rgba(255, 255, 255, 0.1);
@@ -15,7 +15,7 @@
     --radius-md: 14px;
     --radius-lg: 20px;
     --radius-full: 9999px;
-    --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-sans: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 * {
@@ -107,7 +107,7 @@ body {
 
 .lang-btn.active {
     background: var(--primary-gradient);
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 /* Hero Section */
@@ -123,7 +123,7 @@ body {
     font-weight: 800;
     line-height: 1.25;
     margin-bottom: 14px;
-    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #cbd5e1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -175,7 +175,7 @@ body {
     justify-content: center;
     gap: 2px;
     background: var(--primary-gradient);
-    color: #ffffff;
+    color: #FFFFFF;
     padding: 10px 28px;
     border-radius: var(--radius-full);
     font-weight: 700;
@@ -473,7 +473,7 @@ body {
 
 .card-btn.active {
     background: var(--primary-gradient);
-    color: #ffffff;
+    color: #FFFFFF;
     box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35);
 }
 

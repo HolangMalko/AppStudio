@@ -42,6 +42,7 @@ const translations = {
         guide2Desc: "여행지에서 사진을 찍으면 현재 GPS 주소와 함께 로드맵 지도 상에 감성 기록이 자동 저장됩니다.",
         guide3Title: "3. 예산 및 동행자 정산 관리",
         guide3Desc: "기본 예산을 설정하고 동행자와의 지출 분할 비율을 적용하여 남은 예산을 실시간 모니터링하세요.",
+        btnDetailedGuide: "📖 전체 상세 가이드 보러가기",
 
         sectionPortfolioTitle: "FlosisLab 라인업",
         app1Desc: "영수증 자동 스캔, GPS 기반 로드맵 발자취, 스마트 홈 위젯을 탑재한 여행 지출 및 추억 관리 어플.",
@@ -99,6 +100,7 @@ const translations = {
         guide2Desc: "Take a photo on location. Your GPS address and memory are saved seamlessly to the Roadmap timeline.",
         guide3Title: "3. Budget & Expense Sharing",
         guide3Desc: "Set your trip budget and configure expense split ratios among companions in real-time.",
+        btnDetailedGuide: "📖 View Detailed User Guide",
 
         sectionPortfolioTitle: "FlosisLab Lineup",
         app1Desc: "An all-in-one travel expense & memory manager featuring automatic receipt scanning, GPS footprints, and widgets.",
@@ -156,6 +158,7 @@ const translations = {
         guide2Desc: "撮影した写真は現在のGPS住所とともにロードマップ上にタイムライン保存されます。",
         guide3Title: "3. 予算と精算の管理",
         guide3Desc: "旅行予算を設定し、同行者との精算割合を調整して日別の残額をモニタリングできます。",
+        btnDetailedGuide: "📖 全体詳細ガイドを見る",
 
         sectionPortfolioTitle: "FlosisLab ラインナップ",
         app1Desc: "レシート自動スキャン、GPSロードマップ足跡、ウィジェットを備えた旅行予算＆思い出管理アプリ。",

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide - TravelMoney | FlosisLab</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/webp" href="assets/images/app-icon.webp">
+    <style>
+        /* Compact & Sleek Dashboard Layout */
+        .guide-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+        .guide-menu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 8px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .guide-menu-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        .guide-menu-card.active {
+            background: var(--primary-gradient);
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        .guide-menu-card .icon {
+            font-size: 1rem;
+        }
+        .guide-menu-card .title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            white-space: nowrap;
+        }
+        .guide-menu-card.active .title {
+            color: #ffffff;
+        }
+        .guide-detail-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+        .guide-section-block {
+            margin-bottom: 18px;
+        }
+        .guide-section-title {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: #60a5fa;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .guide-item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .guide-item-row {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            padding: 10px 12px;
+        }
+        .guide-item-row h4 {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+            font-weight: 700;
+        }
+        .guide-item-row p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+        .guide-tip-box {
+            margin-top: 16px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 10px 12px;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+        .guide-tip-box span {
+            font-size: 0.95rem;
+        }
+        .guide-tip-box p {
+            font-size: 0.8rem;
+            color: #93c5fd;
+            line-height: 1.45;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="../travelmoney.html" class="brand-logo">
+                <img src="assets/images/main_icon.png" alt="FlosisLab Logo">
+                <span data-i18n="brandName">FlosisLab</span>
+                <span class="brand-badge">GUIDE</span>
+            </a>
+            <div class="lang-selector">
+                <button class="lang-btn active" data-lang="ko">🇰🇷 KR</button>
+                <button class="lang-btn" data-lang="en">🇺🇸 EN</button>
+                <button class="lang-btn" data-lang="ja">🇯🇵 JP</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container policy-container">
+
+        <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <a href="../travelmoney.html" class="policy-back-btn" style="font-size: 0.82rem;" data-i18n="backToMain">← 메인으로 돌아가기</a>
+            <h1 style="font-size: 1.2rem; font-weight: 800;" data-i18n="guidePageHeader">📖 TravelMoney 세부 기능 전체 가이드</h1>
+        </div>
+
+        <!-- 11 Feature Category Selector Cards (Compact Grid) -->
+        <div class="guide-menu-grid">
+            <div class="guide-menu-card active" data-guide="1">
+                <span class="icon">✈️</span>
+                <span class="title" data-i18n="menu1">여행 목록</span>
+            </div>
+            <div class="guide-menu-card" data-guide="2">
+                <span class="icon">➕</span>
+                <span class="title" data-i18n="menu2">새 여행 계획</span>
+            </div>
+            <div class="guide-menu-card" data-guide="3">
+                <span class="icon">💸</span>
+                <span class="title" data-i18n="menu3">지출/수입 내역</span>
+            </div>
+            <div class="guide-menu-card" data-guide="4">
+                <span class="icon">📝</span>
+                <span class="title" data-i18n="menu4">지출/수입 기록</span>
+            </div>
+            <div class="guide-menu-card" data-guide="5">
+                <span class="icon">📍</span>
+                <span class="title" data-i18n="menu5">로드맵 & 동선지도</span>
+            </div>
+            <div class="guide-menu-card" data-guide="6">
+                <span class="icon">📄</span>
+                <span class="title" data-i18n="menu6">PDF 리포트</span>
+            </div>
+            <div class="guide-menu-card" data-guide="7">
+                <span class="icon">📊</span>
+                <span class="title" data-i18n="menu7">지출 통계 차트</span>
+            </div>
+            <div class="guide-menu-card" data-guide="8">
+                <span class="icon">🤝</span>
+                <span class="title" data-i18n="menu8">동행자 1/N 정산</span>
+            </div>
+            <div class="guide-menu-card" data-guide="9">
+                <span class="icon">💱</span>
+                <span class="title" data-i18n="menu9">현지 예산 & 환율</span>
+            </div>
+            <div class="guide-menu-card" data-guide="10">
+                <span class="icon">📋</span>
+                <span class="title" data-i18n="menu10">준비물 체크리스트</span>
+            </div>
+            <div class="guide-menu-card" data-guide="11">
+                <span class="icon">⚙️</span>
+                <span class="title" data-i18n="menu11">설정, 위젯 & 백업</span>
+            </div>
+        </div>
+
+        <!-- Detail Guide Display Box -->
+        <div class="guide-detail-card" id="guide-detail-content">
+            <!-- Dynamic Content loaded via JS -->
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 FlosisLab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const guideData = {
+            ko: {
+                1: {
+                    title: "✈️ 여행 목록 페이지 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "등록된 전체 여행 카탈로그", desc: "국내 및 해외 여행 카드가 연도별로 시각적으로 그룹화되어 노출됩니다." },
+                        { title: "상단 고정 즐겨찾기(⭐️) 핀 목록", desc: "중요하거나 현재 진행 중인 여행이 최상단 즐겨찾기 바에 고정 노출됩니다." },
+                        { title: "여행 총 사용 금액 & 방문 국가/기간", desc: "카드 하단에서 총 사용 금액과 방문 국가 태그, 여행 날짜 범위를 확인할 수 있습니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "뷰 모드 3단계 전환 버튼 [ 🔳 / ☰ / 📱 ]", desc: "우측 상단 뷰 모드 아이콘을 눌러 대형 커버 카드(1열), 격자 그리드(2열), 슬림 리스트(1열) 모드로 전환합니다." },
+                        { title: "필터 드롭다운 [ 전체 / 진행 중 / 지난 여행 / 즐겨찾기 ]", desc: "상단 드롭다운 메뉴를 통해 원하는 상태의 여행만 모아서 빠르게 정렬합니다." },
+                        { title: "검색 & 상세 필터 버튼 [ 🔍 ]", desc: "검색어, 특정 방문 국가, 날짜 범위를 조합하여 원하는 여행을 1초 만에 찾습니다." },
+                        { title: "연도별 Accordion [ 전체 접기 / 전체 펼치기 ]", desc: "과거 여행들을 연도별 코드로 깔끔하게 접어서 숨기거나 한 번에 펼쳐볼 수 있습니다." },
+                        { title: "카드 슬라이드/길게 누르기", desc: "여행 카드를 길게 누르거나 밀어서 [보관함 이동] 또는 [휴지통 삭제] 처리가 가능합니다." }
+                    ],
+                    tip: "💡 즐겨찾기 별(⭐️) 아이콘을 터치하면 해당 여행이 목록 최상단에 즉시 고정됩니다."
+                },
+                2: {
+                    title: "➕ 새 여행 계획하기 페이지 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "방문 국가 검색 및 현지 통화 자동 추천", desc: "국가를 검색해 선택하면 해당 국가의 공식 통화와 실시간 환율 정보가 자동 구성됩니다." },
+                        { title: "여행 커버 이미지 미리보기", desc: "기본 제공 감성 이미지 및 카메라/앨범에서 선택한 커버 사진을 미리 확인합니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "여행 제목 & 달력 기간 지정", desc: "여행 제목(예: 도쿄 식도락 여행 ✈️)과 시작일~종료일 달력을 설정합니다." },
+                        { title: "다중 방문 국가 추가 [ + 국가 추가 ]", desc: "유럽이나 다국어 여행 시 여러 국가를 추가하여 각 국가별 환율을 동시 구성할 수 있습니다." },
+                        { title: "사진 편집 버튼 [ ✂️ 사진 편집 ]", desc: "카메라/앨범에서 선택한 사진을 4:3 폴라로이드 크롭, 회전, 좌우반전, 확대/축소, 위치 이동으로 나만의 커버 사진으로 꾸옵니다." },
+                        { title: "동행자 멤버 등록", desc: "함께 여행하는 동행자 이름을 쉼표(,)로 구분해 기입하면 정산 및 지출 수단에서 선택 가능해집니다." }
+                    ],
+                    tip: "💡 동행자 이름을 미리 넣어두면 지출 등록 시 누가 지출했는지 1초 만에 선택할 수 있습니다."
+                },
+                3: {
+                    title: "💸 지출/수입 내역 페이지 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "일자별 지출/수입 타임라인 카드", desc: "날짜별로 지출/수입 항목, 카테고리 아이콘, 금액, 결제 수단(현금/카드)이 나열됩니다." },
+                        { title: "상단 총 사용 금액 & 예산 요약 바", desc: "여행 전체 예산 대비 총 지출액과 남은 잔액이 실시간 바 게이지로 노출됩니다." },
+                        { title: "영수증 아이콘 [ 🧾 ] & 위치 아이콘 [ 📍 ]", desc: "영수증 사진이나 장소 위치 정보가 첨부된 항목은 전용 아이콘으로 구분 표시됩니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "내역 카드 터치 ➔ 상세 정보 팝업", desc: "항목을 터치하면 상세 지출 내용, 환율 수식, 결제자, 정산 멤버, 영수증 원본 사진 미리보기가 나타납니다." },
+                        { title: "영수증 사진 터치 ➔ 풀스크린 크게 보기", desc: "첨부된 영수증 사진을 터치하면 원본 해상도로 화면 가득 크게 확대하여 볼 수 있습니다." },
+                        { title: "수정 [ ✏️ ] & 삭제 [ 🗑️ ] 버튼", desc: "상세창에서 수정 버튼을 눌러 금액이나 카테고리를 고치거나, 삭제를 눌러 내역을 지웁니다." },
+                        { title: "카테고리 & 결제 수단 필터링", desc: "식비, 교통, 숙박 등 특정 카테고리나 현금/카드 지출만 모아서 필터 조회가 가능합니다." }
+                    ],
+                    tip: "💡 총 지출 상단 바를 누르면 예산 설정 및 통화 기준을 빠르게 변경할 수 있습니다."
+                },
+                4: {
+                    title: "📝 지출/수입 기록 시트 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "자동 계산된 환율 및 환산 금액", desc: "현지 통화 입력 시 내 나라 기준 통화로 자동 계산된 금액이 실시간 표시됩니다." },
+                        { title: "영수증 스캔 및 앨범 미리보기 썸네일", desc: "촬영하거나 불러온 영수증 이미지의 미리보기 썸네일을 즉시 확인합니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "수입 / 지출 & 현금 / 카드 / 기타 토글", desc: "[지출/수입] 구분 및 [현금/카드/기타] 결제 수단을 터치해 고릅니다." },
+                        { title: "통화 드롭다운 & 수동 환율 연필 버튼 [ ✏️ ]", desc: "드롭다운으로 통화를 바꾸고, 연필(✏️) 버튼을 눌러 공항에서 실제 환전한 환율 수치를 직접 기입하고 고정할 수 있습니다." },
+                        { title: "1초 AI 영수증 카메라 스캔 [ 📷 ]", desc: "[영수증 스캔] 버튼으로 영수증을 찍으면 스마트 AI가 결제 금액을 자동 추출해 입력해 줍니다." },
+                        { title: "사진 편집 버튼 [ ✂️ 사진 편집 ]", desc: "첨부한 영수증/여행 사진을 4:3 폴라로이드 크롭, 회전, 좌우반전, 확대/축소, 위치 이동으로 편집합니다." },
+                        { title: "결제자(Paid By) & 정산 인원(Shared By)", desc: "누가 지출했는지 선택하고, 정산에 참여할 동행자 체크박스를 다중 선택합니다." },
+                        { title: "정산 제외 칩 토글 [ 🚫 정산 제외 ]", desc: "'이 지출은 정산에서 제외' 칩을 켜면 개인 지출로 처리되어 정산 계산에서 누락됩니다." },
+                        { title: "위치 정보 칩 [ 📍 위치 정보 ]", desc: "GPS 단발 조회가 수행되며, 칩을 누르면 위치 삭제 및 재조회가 가능합니다." }
+                    ],
+                    tip: "💡 환율 연필(✏️) 아이콘을 누르면 공항에서 직접 환전한 실제 환율 숫자를 입력해 고정할 수 있습니다."
+                },
+                5: {
+                    title: "📍 로드맵 발자취 & 동선 지도 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "감성 사진 타임라인", desc: "날씨, 기분 이모지, GPS 주소, 메모가 담긴 여행 사진 타임라인을 감상합니다." },
+                        { title: "여행자 동선 지도 (OsmDroid)", desc: "시간순 이동 동선 선(Polyline)과 사진 찍은 발자취 위치, 지출 발생 위치가 지도 상에 선명하게 연결되어 나타납니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "원터치 발자취 기록 [+]", desc: "사진 촬영/선택 ➔ 현위치 GPS 자동 입력 ➔ 날씨/기분 이모지 선택 ➔ 100자 메모를 기입하여 발자취를 남깁니다." },
+                        { title: "사진 편집 버튼 [ ✂️ 사진 편집 ]", desc: "4:3 폴라로이드 크롭, 회전, 좌우반전, 확대/축소, 위치 이동으로 감성 사진을 꾸밉니다." },
+                        { title: "우수 발자취 하이라이트 핀 [ ⭐️ ]", desc: "중요한 추억 사진에 하이라이트 핀을 걸어 상단에 고정합니다." },
+                        { title: "동선 지도 아이콘 [ 🗺️ ]", desc: "버튼을 누르면 전체 지도가 열리며, 지도 상의 마커를 터치하면 해당 카드로 스무스하게 이동합니다." }
+                    ],
+                    tip: "💡 지도 상의 마커를 터치하면 해당 위치에서 찍은 사진과 지출 카드로 스무스하게 이동합니다."
+                },
+                6: {
+                    title: "📄 A4 감성 PDF 리포트 내보내기 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "고화질 감성 로드맵 사진 문서", desc: "여행지 사진과 날씨/기분 이모지, GPS 주소가 깔끔하게 편집된 A4 문서 미리보기." },
+                        { title: "타임라인 & 지출 내역 합산표", desc: "여행 기간별 주요 동선과 지출 합계 내역이 문서 하단에 투명하게 표로 정리됩니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "PDF 내보내기 버튼 [ 📄 PDF ]", desc: "로드맵 화면 상단 [📄 PDF] 버튼을 누르면 1초 만에 감성 A4 리포트 파일이 자동 생성됩니다." },
+                        { title: "시스템 공유 창 연동 (카카오톡/메신저/이메일/인쇄)", desc: "생성 직후 안드로이드 공유 창이 자동으로 열려 카카오톡, 메신저, 이메일로 전송하거나 바로 인쇄할 수 있습니다." }
+                    ],
+                    tip: "💡 여행이 끝난 후 PDF 리포트를 출력하여 여행 앨범이나 일기장에 간직해 보세요."
+                },
+                7: {
+                    title: "📊 지출 통계 차트 페이지 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "카테고리별 원형 파이 차트 & 바 차트", desc: "식비, 숙박, 교통 등 어느 항목에 돈을 가장 많이 썼는지 비율을 한눈에 파악합니다." },
+                        { title: "결제 수단별 비중 (현금 vs 카드)", desc: "현금과 카드의 사용 비율 및 금액을 비교합니다." },
+                        { title: "일자별 지출 추이 그래프", desc: "여행 기간 동안 날짜별 지출 변화 곡선을 모니터링합니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "차트 조각 터치 ➔ 팝업 & 필터링", desc: "차트의 특정 조각을 터치하면 해당 카테고리의 총금액 및 % 비율이 팝업으로 뜨며, 아래에 해당 내역만 모아서 필터링 조회됩니다." },
+                        { title: "동행자 개인별 지출 통계 드롭다운", desc: "동행자 이름을 선택하여 특정 멤버가 사용한 금액만 추출해 봅니다." }
+                    ],
+                    tip: "💡 원형 차트 조각을 터치하면 해당 카테고리의 총금액과 전체 대비 % 비율이 팝업으로 표시됩니다."
+                },
+                8: {
+                    title: "🤝 동행자 1/N 정산 페이지 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "최단 송금 경로 알고리즘 정산표", desc: "누가 누구에게 얼마를 송금해야 하는지 정산 매니저가 최소 거래 횟수로 계산해 보여줍니다." },
+                        { title: "개인별 총 지출 및 정산 잔액 표", desc: "각 동행자가 총 얼마를 썼고, 얼마를 더 내거나 받아야 하는지 표로 노출됩니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "정산 완료 체크박스 [ ☑️ ]", desc: "친구에게 돈을 받으면 체크박스를 눌러 정산 완료 목록으로 이동시킵니다." },
+                        { title: "정산 결과 메시지 복사/공유 [ 📤 공유 ]", desc: "[정산 결과 공유]를 누르면 정산 내용 텍스트가 복사되어 카카오톡이나 문자로 바로 전송할 수 있습니다." }
+                    ],
+                    tip: "💡 지출 등록 시 '정산 제외' 칩을 켜둔 항목은 정산표에서 자동으로 누락되어 계산에 영향을 주지 않습니다."
+                },
+                9: {
+                    title: "💱 현지 예산 & 실시간 환율 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "남은 예산 색상 바 게이지", desc: "전체 예산 대비 현재 사용 %와 남은 잔액이 실시간 진행 바 게이지로 표시됩니다." },
+                        { title: "일일 권장 사용 예산", desc: "남은 여행 일수에 맞추어 오늘 하루 사용할 수 있는 일일 권장 예산 금액이 자동 표시됩니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "예산 설정 버튼 [ ⚙️ 예산 설정 ]", desc: "버튼을 눌러 초기 총예산 금액을 입력하거나 수정합니다." },
+                        { title: "수입 모아보기 버튼 [ 💵 수입 모아보기 ]", desc: "버튼을 눌러 여행 중 발생한 수입 내역만 한곳에 몰아서 집중 조회할 수 있습니다." },
+                        { title: "실시간 환율 계산기", desc: "세계 각국 통화 드롭다운 선택 ➔ 양방향 실시간 즉시 계산 + 연필(✏️) 수동 환율 오버라이드 고정." }
+                    ],
+                    tip: "💡 수입 모아보기 버튼을 누르면 여행 중 들어온 수입만 따로 집계해 볼 수 있습니다."
+                },
+                10: {
+                    title: "📋 준비물 체크리스트 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "카테고리별 준비물 목록", desc: "필수품, 의류, 전자제품, 비상약 등 분야별 챙길 목록을 분류해 보여줍니다." },
+                        { title: "달성률 진행 바 (% Gauge)", desc: "전체 준비물 대비 챙긴 항목의 비중을 % 수치와 색상 바 게이지로 실시간 파악합니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "준비물 추가 [ + 항목 추가 ]", desc: "새 준비물 아이템을 추가하고 카테고리를 설정합니다." },
+                        { title: "체크박스 완료 [ ☑️ ]", desc: "준비 완료한 물품의 체크박스를 터치합니다." },
+                        { title: "편집 및 삭제 [ 🗑️ ]", desc: "이름을 수정하거나 불필요한 목록을 삭제합니다." }
+                    ],
+                    tip: "💡 출발 전에 체크리스트 달성률 100%를 채워 준비물 누락을 예방해 보세요."
+                },
+                11: {
+                    title: "⚙️ 설정, 위젯 & 백업 세부 가이드",
+                    viewText: "👁️ 무엇을 볼 수 있나요?",
+                    views: [
+                        { title: "안전한 지난 여행 보관함 [ 📦 보관함 ]", desc: "언제든 다시 꺼내볼 수 있도록 완결된 여행을 안전하게 보관함에 보관합니다." },
+                        { title: "30일 휴지통 데이터 보호 시스템 [ 🗑️ 휴지통 ]", desc: "실수로 삭제한 여행도 30일간 휴지통에 안전 보관되어 1터치로 복원 가능하며, 30일 후 자동 파기됩니다." },
+                        { title: "사진 보관함 [ 🔒 Vault ]", desc: "외부 갤러리에 노출되지 않는 고화질 원본 카메라 사진 전용 보안 공간 (`filesDir/vault/`)." },
+                        { title: "3종류의 홈 화면 위젯", desc: "영수증 스캔, 발자취 카메라, 예산 요약 위젯 3종을 홈 화면에 구성합니다." }
+                    ],
+                    actionText: "⚙️ 버튼별 조작 및 세부 기능",
+                    actions: [
+                        { title: "ZIP 암호화 데이터 백업 및 복원 [ 📦 백업/복원 ]", desc: "[데이터 백업하기]를 눌러 6자리 비밀번호를 지정하면 모든 데이터와 사진이 암호화 ZIP 파일로 보관되며, 새 기기에서 [복원하기]로 100% 복구됩니다." },
+                        { title: "솔트(Salt) 비밀번호 앱 잠금", desc: "비밀번호 잠금을 켜서 개인 금융 지출 기록을 완벽하게 보호합니다." }
+                    ],
+                    tip: "💡 실수로 지운 여행도 30일 이내라면 휴지통에서 버튼 하나로 100% 복구할 수 있습니다."
+                }
+            },
+            en: {
+                1: {
+                    title: "✈️ Trip List Page Detailed Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Trip Catalog", desc: "Displays all domestic and international trips grouped neatly by year." },
+                        { title: "Pinned Favorites (⭐️)", desc: "Important or current trips stay pinned at the top of your catalog." },
+                        { title: "Total Spent Summary", desc: "Displays total spent, visited countries, and dates directly on each trip card." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "3-Step View Mode Switch [ 🔳 / ☰ / 📱 ]", desc: "Toggle between Large Cover Cards (1 col), Grid (2 cols), and Slim List (1 col)." },
+                        { title: "Filter Dropdown [ All / Active / Past / Favorites ]", desc: "Quickly sort trips by status using the dropdown filter." },
+                        { title: "Search & Filter Button [ 🔍 ]", desc: "Search by keywords, visited countries, and date ranges in 1 second." },
+                        { title: "Expand/Collapse All by Year", desc: "Group and collapse past trips neatly by year to keep your view organized." },
+                        { title: "Archive & Trash", desc: "Long-press or swipe any trip card to move it to the Archive or Trash bin." }
+                    ],
+                    tip: "💡 Tap the star (⭐️) icon on any trip card to instantly pin it to the top."
+                },
+                2: {
+                    title: "➕ New Trip Planning Detailed Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Country & Currency Recommendations", desc: "Search and select a country to automatically configure official currency and live exchange rates." },
+                        { title: "Cover Photo Preview", desc: "Preview default cover images or custom photos selected from your camera/gallery." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "Title & Date Selection", desc: "Set trip title (e.g. Tokyo Food Tour ✈️) and select start & end dates on the calendar." },
+                        { title: "Multi-Country Selection [ + Add Country ]", desc: "Add multiple countries for multi-destination trips with simultaneous currency setup." },
+                        { title: "Photo Editor Button [ ✂️ Edit Photo ]", desc: "Crop (4:3 polaroid), rotate, flip, scale, and adjust custom cover photos with the built-in editor." },
+                        { title: "Companion Members", desc: "Enter names of companions separated by commas for easy settlement assignment." }
+                    ],
+                    tip: "💡 Adding member names during setup allows 1-tap payer assignment when logging expenses later."
+                },
+                3: {
+                    title: "💸 Expense Log List Detailed Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Chronological Expense Timeline", desc: "Expense and income entries listed by date with category icons, payment methods, and amounts." },
+                        { title: "Total Spent Summary Bar", desc: "Monitors total spent and remaining balance against your trip budget in real-time." },
+                        { title: "Receipt Icon [ 🧾 ] & Location Icon [ 📍 ]", desc: "Visual indicator icons showing attached receipts or GPS location information." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "Expense Details Dialog", desc: "Tap any expense entry to view detailed conversion formulas, payers, shared members, and attached receipt photos." },
+                        { title: "Fullscreen Receipt Image View", desc: "Tap attached receipt images to expand them in full-resolution fullscreen mode." },
+                        { title: "Edit [ ✏️ ] & Delete [ 🗑️ ] Buttons", desc: "Tap [Edit] to modify amounts or categories, or [Delete] to remove the entry." },
+                        { title: "Filter by Category & Payment Method", desc: "Filter entries by categories (Food, Transport, Hotel) or payment method (Cash vs Card)." }
+                    ],
+                    tip: "💡 Tapping the total spent top bar opens quick budget and base currency settings."
+                },
+                4: {
+                    title: "📝 Expense / Income Input Sheet Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Live Currency Conversion", desc: "Displays instant real-time conversions from foreign currency into your base currency." },
+                        { title: "Receipt Thumbnail Preview", desc: "Inspect captured or imported receipt photo thumbnails instantly." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "Income/Expense & Cash/Card/Check Toggles", desc: "Toggle between Expense or Income and choose Cash, Card, or Check payment methods." },
+                        { title: "Currency Dropdown & Pencil (✏️) Rate Override", desc: "Select currencies or tap the pencil icon to manually type and lock custom exchange rates." },
+                        { title: "1-Sec AI Receipt Scan [ 📷 ]", desc: "Tap [Receipt Scan] to capture a receipt—on-device AI automatically extracts the payment amount in 1 second." },
+                        { title: "Photo Editor Button [ ✂️ Edit Photo ]", desc: "Crop (4:3 polaroid), rotate, flip, scale, and adjust attached receipt/travel photos." },
+                        { title: "Payer (Paid By) & Split Members (Shared By)", desc: "Select who paid and check members participating in the expense split." },
+                        { title: "Exclude from Settlement Toggle [ 🚫 Exclude ]", desc: "Toggle 'Exclude from Settlement' to keep personal purchases out of split calculations." },
+                        { title: "Location Chip [ 📍 Location ]", desc: "Displays GPS location with 1-tap removal and re-fetch options." }
+                    ],
+                    tip: "💡 Tapping the pencil (✏️) icon lets you lock the exact exchange rate you received at the airport cash counter."
+                },
+                5: {
+                    title: "📍 Roadmap Footprints & Route Map Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Polaroid Photo Timeline", desc: "Enjoy your travel photo timeline complete with weather, emotion emojis, GPS address, and notes." },
+                        { title: "Interactive Route Map (OsmDroid)", desc: "Connects travel paths (polylines), footprint photos, and expense locations on an interactive map." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "One-Touch Footprint [+]", desc: "Snap/select photos ➔ auto-fill GPS address ➔ pick weather/emotion emojis ➔ type a 100-character note." },
+                        { title: "Photo Editor Button [ ✂️ Edit Photo ]", desc: "Crop (4:3 polaroid), rotate, flip, scale, and adjust photo composition." },
+                        { title: "Pin Favorite Footprints (⭐️)", desc: "Highlight important memories to pin them at the top of your roadmap." },
+                        { title: "Route Map Button [ 🗺️ ]", desc: "Opens full interactive map; tapping map markers smoothly navigates to that photo/expense card." }
+                    ],
+                    tip: "💡 Tapping any map marker smoothly navigates to that photo or expense card."
+                },
+                6: {
+                    title: "📄 A4 PDF Report Export Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "High-Res Polaroid Roadmap Document", desc: "A4 document preview showcasing photos, weather/emotion emojis, and GPS addresses." },
+                        { title: "Timeline & Expense Summary Tables", desc: "Organized tables showing main travel paths and itemized expense totals at the bottom." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "Export PDF Button [ 📄 PDF ]", desc: "Tap the top [📄 PDF] button on Roadmap to generate an A4 report file in 1 second." },
+                        { title: "System Share Sheet Integration", desc: "Opens native Android share sheet to send PDF files directly via messengers, email, or print." }
+                    ],
+                    tip: "💡 Print your PDF report after returning from your trip to keep in physical photo albums or travel journals."
+                },
+                7: {
+                    title: "📊 Expense Analytics & Charts Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Category Pie & Bar Charts", desc: "Visualize spending proportions across Food, Hotel, Transport, Shopping, and Sightseeing." },
+                        { title: "Cash vs. Card Ratios", desc: "Compare Cash vs Card spending percentages." },
+                        { title: "Daily Spending Trends", desc: "Track daily spending curves over the course of your trip." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "Chart Segment Touch ➔ Pop-Up & Filtering", desc: "Tap any segment in the pie chart to view category totals & % share, filtering matching expense logs below." },
+                        { title: "Member Spending Analysis Dropdown", desc: "Select companion names to view individual spending amounts per person." }
+                    ],
+                    tip: "💡 Tapping a pie slice displays the total category amount and percentage share in a pop-up."
+                },
+                8: {
+                    title: "🤝 Companion 1/N Settlement Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Shortest Transfer Settlement Table", desc: "Calculates the minimal number of transactions showing who sends money to whom." },
+                        { title: "Member Balance Breakdown", desc: "Displays total spent, overpaid, or owed amounts for each companion." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "Settlement Completion Checkbox [ ☑️ ]", desc: "Check off debt items when friends transfer their payments to move them to completed sessions." },
+                        { title: "Copy & Share Results [ 📤 Share ]", desc: "Tap [Share Settlement Results] to copy summary messages for instant sending via messenger apps." }
+                    ],
+                    tip: "💡 Expenses marked 'Exclude from Settlement' are automatically omitted from settlement calculations."
+                },
+                9: {
+                    title: "💱 Local Budget & Live Currency Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Remaining Budget Color Gauge", desc: "Displays spent percentage and remaining balance with color-coded gauge bars." },
+                        { title: "Daily Recommended Budget", desc: "Calculates your daily spending allowance based on remaining trip days." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "Set Budget Button [ ⚙️ Set Budget ]", desc: "Tap to enter or edit initial total budget amounts in base and local currencies." },
+                        { title: "View Incomes Button [ 💵 View Incomes ]", desc: "Tap to group and view all trip income records in one dedicated list." },
+                        { title: "Live Currency Calculator", desc: "Select currencies from dropdowns for instant 2-way conversion + pencil (✏️) rate override." }
+                    ],
+                    tip: "💡 Tapping 'View Incomes' lets you inspect cash gifts or income earned during the trip separately."
+                },
+                10: {
+                    title: "📋 Packing Checklist Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Categorized Packing List", desc: "View packing items categorized by essentials, clothes, electronics, and medicine." },
+                        { title: "Completion Percentage Bar", desc: "Tracks packed vs remaining items with real-time percentage progress bars." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "Add Checklist Item [ + Add Item ]", desc: "Add new packing items and assign them to custom categories." },
+                        { title: "Check Off Task [ ☑️ ]", desc: "Tap checkboxes to mark items as packed." },
+                        { title: "Edit & Delete Items [ 🗑️ ]", desc: "Rename packing items or delete unnecessary entries." }
+                    ],
+                    tip: "💡 Reach 100% completion before departing to ensure zero missing items."
+                },
+                11: {
+                    title: "⚙️ Settings, Widgets & Backup Guide",
+                    viewText: "👁️ What You Can See",
+                    views: [
+                        { title: "Safe Trip Archive [ 📦 Archive ]", desc: "Safely store completed trips to review anytime in the future." },
+                        { title: "30-Day Trash Data Protection [ 🗑️ Trash ]", desc: "Deleted trips are safely retained for 30 days before permanent deletion (1-tap restore available)." },
+                        { title: "Photo Vault [ 🔒 Vault ]", desc: "Private app storage (`filesDir/vault/`) for full-resolution camera photos protected from external galleries." },
+                        { title: "3 Home Screen Widgets", desc: "Configure Receipt Scan, Footprint Camera, and Budget Summary widgets." }
+                    ],
+                    actionText: "⚙️ Button Controls & Detailed Features",
+                    actions: [
+                        { title: "Encrypted Data Backup & Restore [ 📦 Backup/Restore ]", desc: "Tap [Backup Data] with a 6-digit PIN to encrypt all records/photos into a secure ZIP file for 100% recovery on new devices." },
+                        { title: "Salted PIN App Lock", desc: "Enable PIN app lock to protect your private travel financial records." }
+                    ],
+                    tip: "💡 Accidentally deleted trips can be restored with 1 tap from the 30-Day Trash bin within 30 days."
+                }
+            },
+            ja: {
+                1: {
+                    title: "✈️ 旅行一覧ページ詳細ガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "登録旅行カタログ", desc: "国内・海外旅行カードが年別に整理され一目で確認できます。" },
+                        { title: "お気に入り(⭐️)固定リスト", desc: "重要な旅行をリスト最上部にピン留め固定表示します。" },
+                        { title: "旅行総支出概要", desc: "カード下部で総支出額、訪問国、旅行期間を即座に確認できます。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "3段階表示モード切替 [ 🔳 / ☰ / 📱 ]", desc: "右上ボタンで大型カバーカード(1列)、グリッド(2列)、スリムリスト(1列)に切替可能。" },
+                        { title: "フィルタードロップダウン [ 全体 / 進行中 / 過去 / お気に入り ]", desc: "ドロップダウンで状態別の旅行を即座に並べ替えます。" },
+                        { title: "検索＆フィルターボタン [ 🔍 ]", desc: "キーワード、訪問国、日付範囲を組み合わせて検索可能です。" },
+                        { title: "年別折りたたみ/展開", desc: "過去の旅行を年別に折りたたんで表示整理できます。" },
+                        { title: "アーカイブ・ゴミ箱移動", desc: "カードを長押しまたはスライドしてアーカイブやゴミ箱へ移動できます。" }
+                    ],
+                    tip: "💡 星(⭐️)アイコンをタップするとリスト最上部に即座に固定されます。"
+                },
+                2: {
+                    title: "➕ 新規旅行計画詳細ガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "訪問国・現地通貨の自動おすすめ", desc: "国を検索選択すると公式通貨とリアルタイム為替レートが自動構成されます。" },
+                        { title: "カバー写真プレビュー", desc: "デフォルト画像や撮影/アルバム選択画像を事前に確認します。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "タイトル＆日付指定", desc: "旅行タイトル（例: 東京グルメ旅行 ✈️）と開始・終了日を設定します。" },
+                        { title: "複数国の追加 [ + 国追加 ]", desc: "周遊旅行時に複数国を追加し国別の為替レートを同時設定可能。" },
+                        { title: "写真エディタボタン [ ✂️ 写真編集 ]", desc: "4:3ポラロイドクロップ、回転、反転、拡大・縮小、位置移動でカバー写真を加工できます。" },
+                        { title: "同行者メンバー登録", desc: "同行者の名前をカンマ(,)区切りで登録し精算機能で選択可能にします。" }
+                    ],
+                    tip: "💡 同行者を登録しておくと支出入力時に支払者を1秒で選択できます。"
+                },
+                3: {
+                    title: "💸 支出・収入履歴詳細ガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "日付別タイムライン", desc: "日付ごとの支出・収入項目、カテゴリ、金額、決済方法（現金/カード）を一覧表示。" },
+                        { title: "総支出概要バー", desc: "全体予算に対する総支出額と残額をリアルタイムバーゲージで表示。" },
+                        { title: "レシートアイコン [ 🧾 ] ＆ 位置アイコン [ 📍 ]", desc: "レシート写真やGPS位置情報が添付されている項目を視覚表示。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "詳細ダイアログ確認", desc: "項目をタップすると換算式、支払者、割り勘メンバー、レシート写真を確認できます。" },
+                        { title: "レシート写真フルスクリーン表示", desc: "添付写真をタップすると原版高画質で全画面表示可能です。" },
+                        { title: "編集 [ ✏️ ] ＆ 削除 [ 🗑️ ] ボタン", desc: "「編集」で金額やカテゴリを修正、「削除」で明細を消去できます。" },
+                        { title: "カテゴリ＆決済方法フィルター", desc: "食費や交通費、現金/カード支出のみを絞り込み表示可能です。" }
+                    ],
+                    tip: "💡 上部総支出バーをタップすると予算設定と基準通貨を素早く変更できます。"
+                },
+                4: {
+                    title: "📝 支出・収入記録シート詳細ガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "自動換算金額", desc: "現地通貨入力時に基準通貨へ自動換算された金額を表示。" },
+                        { title: "レシートスキャンサムネイル", desc: "撮影・読み込んだ写真のサムネイルを即座に確認。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "支出/収入＆現金/カード/その他選択", desc: "区分と決済方法をタップして選択します。" },
+                        { title: "通貨ドロップダウン＆手動鉛筆(✏️)レート固定", desc: "通貨を切り替え、鉛筆アイコンを押してレートを直接入力固定可能。" },
+                        { title: "1秒AIレシートスキャン [ 📷 ]", desc: "「レシートスキャン」で撮影するとAIが金額を自動抽出します。" },
+                        { title: "写真エディタボタン [ ✂️ 写真編集 ]", desc: "4:3ポラロイドクロップ、回転、反転、拡大・縮小、位置移動で加工。" },
+                        { title: "支払者(Paid By)＆割勘メンバー(Shared By)", desc: "支払者と割り勘に参加するメンバーを指定します。" },
+                        { title: "精算除外チップ [ 🚫 精算除外 ]", desc: "「精算除外」を有効にすると個人支出として割り勘から自動除外されます。" },
+                        { title: "位置情報チップ [ 📍 位置情報 ]", desc: "GPS自動入力と1タップ削除・再取得が可能です。" }
+                    ],
+                    tip: "💡 鉛筆(✏️)アイコンで両替所で実際に換算した為替レートを入力固定できます。"
+                },
+                5: {
+                    title: "📍 ロードマップ足跡＆動線マップガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "ポラロイド写真タイムライン", desc: "天気、気分絵文字、GPS住所、メモが付いた旅写真タイムラインを鑑賞。" },
+                        { title: "旅動線マップ (OsmDroid)", desc: "時間順移動動線(Polyline)と足跡・支出場所が地図上に描かれます。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "ワンタッチ足跡記録 [+]", desc: "写真撮影 ➔ GPS住所自動入力 ➔ 天気/気分選択 ➔ 100字メモを記録。" },
+                        { title: "写真エディタボタン [ ✂️ 写真編集 ]", desc: "4:3ポラロイドクロップ、回転、反転、拡大・縮小、位置移動を加工。" },
+                        { title: "ハイライトピン [ ⭐️ ]", desc: "大切な思い出写真にハイライトピンを立てて固定。" },
+                        { title: "動線マップボタン [ 🗺️ ]", desc: "全体地図が開き、マーカータップで該当カードへ移動します。" }
+                    ],
+                    tip: "💡 地図上のマーカーをタップすると該当する写真や支出カードへスムーズに移動します。"
+                },
+                6: {
+                    title: "📄 A4 PDFレポート出力ガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "高画質ポラロイドロードマップ文書", desc: "写真や絵文字、GPS住所が整理されたA4文書プレビュー。" },
+                        { title: "タイムライン＆支出集計表", desc: "主要動線と支出合計が明瞭な表として整理されます。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "PDF出力ボタン [ 📄 PDF ]", desc: "ロードマップ上部[📄 PDF]を押すと1秒でA4レポートを自動生成。" },
+                        { title: "システム共有連携 (メッセージ/メール/印刷)", desc: "生成直後に共有画面が開き、メッセージやメール送信、直接印刷が可能です。" }
+                    ],
+                    tip: "💡 旅行終了後にPDFレポートを印刷して手帳やアルバムに保管できます。"
+                },
+                7: {
+                    title: "📊 支出統計チャートページガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "カテゴリ別円グラフ＆バーグラフ", desc: "食費、宿泊、交通などの支出比率を一目で把握。" },
+                        { title: "現金 vs カード比率", desc: "現金とカードの使用割合および金額を比較。" },
+                        { title: "日別支出推移グラフ", desc: "旅行期間中の日別支出変化をモニタリング。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "チャートタップ ➔ ポップアップ＆絞り込み", desc: "チャートのスライスをタップすると合計額と%比率が表示され該当明細を抽出表示。" },
+                        { title: "同行者個人別統計ドロップダウン", desc: "メンバーを選択して特定個人の支出金額を抽出。" }
+                    ],
+                    tip: "💡 円グラフのスライスをタップするとカテゴリの合計額と占有率%がポップアップ表示されます。"
+                },
+                8: {
+                    title: "🤝 同行者割勘精算ページガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "最短送金ルート精算表", desc: "誰が誰にいくら送金すべきか最小取引回数で自動計算表示。" },
+                        { title: "個人別総支出および精算残額表", desc: "各自が使った額、精算すべき差額を表で表示。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "精算完了チェックボックス [ ☑️ ]", desc: "送金を受け取ったらチェックを入れて完了リストへ移動。" },
+                        { title: "結果共有ボタン [ 📤 共有 ]", desc: "「精算結果共有」でテキストをコピーしメッセージアプリへ即座に送信。" }
+                    ],
+                    tip: "💡 「精算除外」を設定した項目は自動的に除外されて計算されます。"
+                },
+                9: {
+                    title: "💱 現地予算＆リアルタイム為替ガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "残額カラーゲージ", desc: "全体予算に対する使用割合と残額をカラーゲージで表示。" },
+                        { title: "1日のおすすめ予算", desc: "残りの日数に合わせ本日使える推奨予算を自動計算。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "予算設定ボタン [ ⚙️ 予算設定 ]", desc: "ボタンを押して初期総予算額を入力・修正します。" },
+                        { title: "収入一覧ボタン [ 💵 収入一覧 ]", desc: "旅行中に発生した収入明細のみを一箇所にまとめて集中確認できます。" },
+                        { title: "リアルタイム為替電卓", desc: "世界各国の通貨を選択して双方向換算＋鉛筆(✏️)手動レート固定。" }
+                    ],
+                    tip: "💡 収入一覧ボタンを押すと旅行中に入った臨時収入や還付金のみを抽出表示できます。"
+                },
+                10: {
+                    title: "📋 持ち物チェックリストガイド",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "カテゴリ別持ち物リスト", desc: "必須品、衣類、電子機器などカテゴリ別に持ち物を分類表示。" },
+                        { title: "達成率%ゲージバー", desc: "全体の持ち物に対する完了率を%ゲージバーで確認。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "持ち物追加 [ + 項目追加 ]", desc: "新しい持ち物を追加しカテゴリを設定します。" },
+                        { title: "チェックボックス完了 [ ☑️ ]", desc: "準備完了した物品のチェックボックスをタップ。" },
+                        { title: "編集＆削除 [ 🗑️ ]", desc: "名前の変更や不要な持ち物の削除。" }
+                    ],
+                    tip: "💡 出発前に達成率100%を達成して準備物の忘れ物を防止しましょう。"
+                },
+                11: {
+                    title: "⚙️ 設定、ウィジェット＆バックアップ",
+                    viewText: "👁️ 確認できる内容",
+                    views: [
+                        { title: "安全な過去旅行アーカイブ [ 📦 アーカイブ ]", desc: "完了した旅行を保管庫で安全に保存。" },
+                        { title: "30日ゴミ箱データ保護 [ 🗑️ ゴミ箱 ]", desc: "誤削除した旅行も30日間復元可能で保護されます。" },
+                        { title: "写真保管庫 [ 🔒 Vault ]", desc: "外部ギャラリーに露出されないセキュリティ専用領域 (`filesDir/vault/`)。" },
+                        { title: "3種類のホーム画面ウィジェット", desc: "スキャン、足跡カメラ、予算概要ウィジェットを配置。" }
+                    ],
+                    actionText: "⚙️ ボタン操作・詳細機能",
+                    actions: [
+                        { title: "暗号化バックアップと復元 [ 📦 バックアップ/復元 ]", desc: "6桁PINで全データと写真を暗号化ZIP保存し「復元」から100%復元可能。" },
+                        { title: "PINアプリロック", desc: "パスワードロックで金融記録を保護。" }
+                    ],
+                    tip: "💡 誤って削除した旅行も30日以内ならゴミ箱からボタン一つで100%復元可能です。"
+                }
+            }
+        };
+
+        let currentLang = localStorage.getItem('guide_lang') || 'ko';
+        let currentGuideId = 1;
+
+        const categoryDict = {
+            ko: {
+                menu1: "여행 목록", menu2: "새 여행 계획", menu3: "지출/수입 내역", menu4: "지출/수입 기록",
+                menu5: "로드맵 & 동선지도", menu6: "PDF 리포트", menu7: "지출 통계 차트", menu8: "동행자 1/N 정산",
+                menu9: "현지 예산 & 환율", menu10: "준비물 체크리스트", menu11: "설정, 위젯 & 백업",
+                backToMain: "← 메인으로 돌아가기", guidePageHeader: "📖 TravelMoney 세부 기능 전체 가이드"
+            },
+            en: {
+                menu1: "Trip List", menu2: "Plan Trip", menu3: "Expense Logs", menu4: "Log Sheet",
+                menu5: "Roadmap & Map", menu6: "PDF Report", menu7: "Expense Analytics", menu8: "1/N Settlement",
+                menu9: "Local Budget", menu10: "Checklist", menu11: "Settings & Backup",
+                backToMain: "← Back to Main", guidePageHeader: "📖 TravelMoney Detailed User Manual"
+            },
+            ja: {
+                menu1: "旅行一覧", menu2: "新規計画", menu3: "支出・収入履歴", menu4: "支出・収入記録",
+                menu5: "足跡＆動線マップ", menu6: "PDFレポート", menu7: "支出統計", menu8: "割り勘精算",
+                menu9: "現地予算・為替", menu10: "持ち物リスト", menu11: "設定・バックアップ",
+                backToMain: "← メインへ戻る", guidePageHeader: "📖 TravelMoney 詳細取扱説明書"
+            }
+        };
+
+        function renderGuideDetail() {
+            const container = document.getElementById('guide-detail-content');
+            if (!container) return;
+
+            const dict = guideData[currentLang] || guideData.ko;
+            const item = dict[currentGuideId] || dict[1];
+
+            let viewsHtml = '';
+            item.views.forEach(v => {
+                viewsHtml += `
+                    <div class="guide-item-row">
+                        <h4>🔹 ${v.title}</h4>
+                        <p>${v.desc}</p>
+                    </div>
+                `;
+            });
+
+            let actionsHtml = '';
+            item.actions.forEach(a => {
+                actionsHtml += `
+                    <div class="guide-item-row">
+                        <h4>⚡ ${a.title}</h4>
+                        <p>${a.desc}</p>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = `
+                <h2 style="font-size: 1.15rem; font-weight: 800; color: #60a5fa; margin-bottom: 14px;">${item.title}</h2>
+
+                <div class="guide-section-block">
+                    <div class="guide-section-title">${item.viewText}</div>
+                    <div class="guide-item-list">
+                        ${viewsHtml}
+                    </div>
+                </div>
+
+                <div class="guide-section-block" style="margin-top: 16px;">
+                    <div class="guide-section-title">${item.actionText}</div>
+                    <div class="guide-item-list">
+                        ${actionsHtml}
+                    </div>
+                </div>
+
+                <div class="guide-tip-box">
+                    <span>💡</span>
+                    <p>${item.tip}</p>
+                </div>
+            `;
+        }
+
+        function setGuideLanguage(lang) {
+            currentLang = (lang === 'ja' || lang === 'jp') ? 'ja' : (lang === 'en' ? 'en' : 'ko');
+            localStorage.setItem('guide_lang', currentLang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === currentLang || (btn.dataset.lang === 'ja' && currentLang === 'ja'));
+            });
+
+            const catDict = categoryDict[currentLang] || categoryDict.ko;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (catDict[key]) {
+                    el.textContent = catDict[key];
+                }
+            });
+
+            renderGuideDetail();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            const targetLang = (urlLang === 'ja' || urlLang === 'jp') ? 'ja' : (urlLang === 'en' ? 'en' : (urlLang === 'ko' ? 'ko' : null));
+            const navLang = navigator.language.startsWith('ja') ? 'ja' : (navigator.language.startsWith('en') ? 'en' : 'ko');
+            const savedLang = targetLang || localStorage.getItem('guide_lang') || navLang;
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => setGuideLanguage(btn.dataset.lang));
+            });
+
+            document.querySelectorAll('.guide-menu-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    document.querySelectorAll('.guide-menu-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    currentGuideId = parseInt(card.dataset.guide, 10);
+                    renderGuideDetail();
+                });
+            });
+
+            setGuideLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>
