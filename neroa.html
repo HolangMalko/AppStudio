@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neroa - FlosisLab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="assets/images/app-icon.webp">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/main_icon.png" alt="FlosisLab Logo">
+                <span data-i18n="brandName">FlosisLab</span>
+                <span class="brand-badge">NEROA</span>
+            </a>
+            <div class="lang-selector">
+                <button class="lang-btn active" data-lang="ko">🇰🇷 KR</button>
+                <button class="lang-btn" data-lang="en">🇺🇸 EN</button>
+                <button class="lang-btn" data-lang="ja">🇯🇵 JP</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+                <img src="neroa/assets/neroa_icon.webp" alt="Neroa Icon" style="width: 48px; height: 48px; border-radius: 12px; object-fit: cover;">
+                Neroa
+            </h1>
+            <p class="hero-subtitle">
+                소중한 추억을 비추는 감성 디지털 액자 애플리케이션.
+            </p>
+
+            <a href="#" class="btn-primary" onclick="alert('Google Play Store 출시 준비 중입니다!'); return false;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span>🛒</span>
+                    <span data-i18n="btnPlayStoreText">Google Play 다운로드</span>
+                </div>
+                <span class="btn-subtext" data-i18n="btnPlayStoreSubtext">(출시 준비 중)</span>
+            </a>
+        </section>
+
+        <!-- Core Features Grid -->
+        <section class="section-block">
+            <h2 class="section-title" data-i18n="sectionFeaturesTitle">주요 기능</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 16px;">
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px;">
+                    <div style="font-size: 1.6rem; margin-bottom: 10px;">📲</div>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--primary-color);">로컬 Wi-Fi QR 전송</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">스마트폰으로 QR 코드를 스캔하여 외부 서버 전송 없이 로컬 Wi-Fi로 사진을 무선 즉시 전송합니다.</p>
+                </div>
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px;">
+                    <div style="font-size: 1.6rem; margin-bottom: 10px;">🕰️</div>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--primary-color);">다양한 위젯 & 3x3 위치 이동</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">시계, 날짜, 실시간 날씨, 캘린더, 비디오 위젯을 3x3 화면 어디든 자유롭게 배치할 수 있습니다.</p>
+                </div>
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px;">
+                    <div style="font-size: 1.6rem; margin-bottom: 10px;">🎵</div>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--primary-color);">감성 BGM & 자연 ASMR</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">내 음악 재생은 물론 빗소리, 파도소리, 모닥불, 숲속 소리 등 감성 ASMR 배경 음악을 제공합니다.</p>
+                </div>
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px;">
+                    <div style="font-size: 1.6rem; margin-bottom: 10px;">⏰</div>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--primary-color);">자동 실행 & 스케줄링</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">부팅/충전시 자동 슬라이드쇼 시작 및 매일 정해진 시간에 켜지고 꺼지는 자동 스케줄을 지원합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Guide Section Link -->
+        <section class="section-block" style="text-align: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px 24px;">
+            <h2 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--text-primary);">📖 Neroa 전체 이용 가이드</h2>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 20px;">사진 앨범 설정부터 Wi-Fi QR 스마트폰 전송, 위젯 배치 방법까지 상세한 안내를 확인하세요.</p>
+            <a href="neroa/guide.html" class="card-btn active" style="display: inline-flex; align-items: center; justify-content: center; width: auto; padding: 12px 28px; font-size: 0.95rem;">
+                <span data-i18n="btnDetailedGuide">📖 전체 가이드 보기</span>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="neroa/privacy-policy.html" data-i18n="navNeroaPrivacy">Neroa 개인정보 처리방침</a>
+                <span>|</span>
+                <a href="neroa/terms.html" data-i18n="navNeroaTerms">Neroa 이용약관</a>
+                <span>|</span>
+                <a href="neroa/guide.html" data-i18n="navNeroaGuide">Neroa 가이드</a>
+                <span>|</span>
+                <a href="mailto:flosislab@gmail.com" data-i18n="navSupport">문의하기 (Support)</a>
+            </div>
+            <p data-i18n="footerRights">© 2026 FlosisLab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
