@@ -236,7 +236,21 @@ const translations = {
     }
 };
 
-let currentLang = localStorage.getItem('app_lang') || 'ko';
+function getInitialLanguage() {
+    const saved = localStorage.getItem('app_lang');
+    if (saved && translations[saved]) {
+        return saved;
+    }
+    const navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    if (navLang.startsWith('ja')) {
+        return 'ja';
+    } else if (navLang.startsWith('en')) {
+        return 'en';
+    }
+    return 'ko';
+}
+
+let currentLang = getInitialLanguage();
 
 // Screenshot Carousel
 let currentSlideIndex = 0;
