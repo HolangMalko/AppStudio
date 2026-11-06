@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Target Search Keywords & Descriptions -->
+    <title>Privacy Policy - TravelMoney | FlosisLab</title>
+    <meta name="description" content="TravelMoney 개인정보 처리방침. 온디바이스 로컬 저장, 위치 정보 및 개인 데이터 관리 수칙.">
+    <meta name="author" content="FlosisLab">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/webp" href="../assets/images/app-icon.webp">
+</head>
+<body>
+
+    <div class="grid-frame">
+        <div class="container-grid">
+
+            <!-- Navbar Grid -->
+            <header class="navbar-grid">
+                <a href="../travelmoney.html" class="nav-brand">
+                    <img src="../assets/images/main_icon.webp" alt="FlosisLab Logo">
+                    <span data-i18n="brandName">FLOSISLAB</span>
+                </a>
+
+                <!-- Dynamic Center Box: Pixel Smile + Equalizer (Close), Digital Clock (Far Gap) -->
+                <div class="nav-equalizer-box">
+                    <div class="smile-eq-group">
+                        <div class="pixel-smile-badge">☻</div>
+                        <div class="eq-bars-container-tall">
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                        </div>
+                    </div>
+                    <span class="eq-status-label" id="realtime-clock-display">SEOUL 20:59:15</span>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="ko">KR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ja">JP</button>
+                    </div>
+                    <a href="../travelmoney.html" class="btn-orange" data-i18n="backToMain">← 메인으로</a>
+                </div>
+            </header>
+
+            <div class="policy-container">
+                <div class="policy-card-tech square-corner">
+
+                    <!-- ================= Korean Policy ================= -->
+                    <div id="policy-ko" class="policy-lang-block">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <img src="../assets/images/app-icon.webp" alt="TravelMoney Icon" style="width: 52px; height: 52px; border-radius: 12px; border: 2px solid var(--tech-black);">
+                            <div>
+                                <h1>개인정보 처리방침 (TravelMoney)</h1>
+                                <p style="font-weight: 800; color: var(--tech-orange); margin-top: 4px;">개발자: FlosisLab | 최종 수정일: 2026년 10월 3일</p>
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>FlosisLab</strong>(이하 "개발자")은 이용자의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                        </p>
+
+                        <h2>1. 개인정보의 처리 목적</h2>
+                        <p>개발자는 다음의 목적을 위하여 개인정보를 처리합니다.</p>
+                        <ul>
+                            <li><strong>여행 기록 관리</strong>: 여행 일정, 지출 및 수입 내역, 카테고리 분류, 동행자 정산, 로드맵 발자취 기록</li>
+                            <li><strong>서비스 제공 및 기능 수행</strong>: 온디바이스 AI 영수증 스캔(Google ML Kit), 실시간 환율 계산, 위치 정보 기반 주소 및 동선 지도 표시(OpenStreetMap/Google Maps), 사진 보관함(Vault)의 앱 전용 보안 격리 저장, 암호화 백업 및 복원</li>
+                            <li><strong>보안 및 서비스 안정성</strong>: 솔트(Salt) 기반 앱 비밀번호 잠금 처리, 보안 암호화 저장소(EncryptedSharedPreferences) 유지</li>
+                            <li><strong>고객 문의 대응 및 오류 수정</strong>: 앱 이용 문의 대응, 오류 수정 및 기술 지원 (flosislab@gmail.com)</li>
+                            <li><strong>앱 서비스 개선 및 모니터링</strong>: 앱 비정상 종료 로그(Crash log), 성능 모니터링 및 익명 통계 분석</li>
+                        </ul>
+
+                        <h2>2. 처리하는 개인정보의 항목 및 수집 방법</h2>
+                        <p>본 앱은 사용자의 주요 개인 데이터를 외부 서버로 전송하지 않고 기기 내부(On-Device)에 보관하는 로컬 우선 정책을 따릅니다.</p>
+
+                        <ul>
+                            <li><strong>위치 정보 (ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION)</strong>: 여행 발자취 기록, 지출 위치 자동 입력, 동선 지도(OpenStreetMap / Google Maps) 표시를 위한 단말기 GPS 정보 (사용자 선택 시에만 작동)</li>
+                            <li><strong>미디어/파일 액세스 & 카메라 (CAMERA, READ_MEDIA_IMAGES)</strong>: 영수증 사진 촬영 및 로드맵 사진 저장을 위한 기기 내 저장공간 접근</li>
+                            <li><strong>사진 보관함(Vault) 및 암호화 데이터</strong>: 원본 사진 보관함 데이터는 앱 전용 보안 격리 공간에 저장되며, 앱 잠금 비밀번호는 기기 내 보안 암호화 공간에 보관됨</li>
+                            <li><strong>금융 및 지출 수동 입력 정보</strong>: 사용자가 기입하는 지출 금액, 예산, 결제 수단 데이터 (기기 내부 Room DB에만 보관)</li>
+                            <li><strong>기기 및 결제 정보</strong>: 앱 버전, 단말기 모델명, OS 버전, 인앱 구매 처리를 위한 Google Play 결제 ID 및 구매 내역</li>
+                            <li><strong>분석 및 성능 데이터</strong>: Google Firebase(Crashlytics, Analytics, Remote Config, Performance Monitoring)를 통해 수집되는 익명 기술 진단 로그 (개인을 식별할 수 없음)</li>
+                        </ul>
+
+                        <h2>3. 제3자 제공 및 외부 서비스 이용</h2>
+                        <p>개발자는 원칙적으로 이용자의 개인정보를 제3자에게 판매하거나 제공하지 않으나, 원활한 서비스 제공을 위해 아래와 같은 외부 서비스를 이용합니다.</p>
+                        <ul>
+                            <li><strong>Google Play 결제 (In-App Billing)</strong>: 인앱 구매 처리 및 프리미엄(평생 이용권) 구매 상태 확인</li>
+                            <li><strong>Google Firebase</strong>: Crashlytics (앱 비정상 종료 로그 분석 및 안정성 개선), Analytics & Remote Config (서비스 최적화 및 익명 이용 패턴 통계 분석), Performance Monitoring (앱 로딩 속도 및 기술적 문제 진단)</li>
+                            <li><strong>Open Exchange Rates API / Map Services</strong>: 실시간 환율 정보 조회 및 오픈 스트리트 맵/구글 맵 지형 표시 (익명 API 호출)</li>
+                        </ul>
+
+                        <h2>4. 개인정보의 보유 및 이용기간 (로컬 저장소)</h2>
+                        <p>본 앱의 주요 여행 데이터는 사용자의 단말기 내부 저장소(Local Storage)에만 저장됩니다. 개발자는 사용자의 개인 데이터를 서버에 저장하거나 수집하지 않으므로, 앱을 삭제하거나 데이터를 초기화할 경우 기기 내의 모든 데이터는 즉시 파기됩니다.</p>
+
+                        <h2>5. 책임의 한계 및 사용자 관리</h2>
+                        <p>데이터가 이용자의 기기 내부에 저장되므로 기기 분실, 앱 삭제, 비밀번호 분실, 백업 미실행으로 인한 데이터 손실에 대해 개발자는 책임을 지지 않습니다.</p>
+
+                        <h2>6. 개인정보 보호책임자 및 문의처</h2>
+                        <p>서비스 이용 중 발생하는 개인정보 보호 관련 문의사항은 아래 연락처로 문의해 주시기 바랍니다.</p>
+
+                        <ul>
+                            <li><strong>개발자/브랜드</strong>: FlosisLab</li>
+                            <li><strong>이메일 문의</strong>: <a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ================= English Policy ================= -->
+                    <div id="policy-en" class="policy-lang-block" style="display: none;">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <img src="../assets/images/app-icon.webp" alt="TravelMoney Icon" style="width: 52px; height: 52px; border-radius: 12px; border: 2px solid var(--tech-black);">
+                            <div>
+                                <h1>Privacy Policy (TravelMoney)</h1>
+                                <p style="font-weight: 800; color: var(--tech-orange); margin-top: 4px;">Developer: FlosisLab | Last Updated: October 3, 2026</p>
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>FlosisLab</strong> ("Developer") discloses this Privacy Policy to explain how personal data and app permissions are managed transparently for the TravelMoney application.
+                        </p>
+
+                        <h2>1. Purpose of Processing Personal Data</h2>
+                        <p>Personal data and app permissions are processed strictly for the following purposes:</p>
+                        <ul>
+                            <li><strong>Trip Record Management</strong>: Itineraries, expense & income logs, category sorting, companion split bills, and roadmap footprint timelines.</li>
+                            <li><strong>Core Features</strong>: On-device AI receipt scanning (Google ML Kit), real-time currency converter, location-based map footprints (OpenStreetMap/Google Maps), isolated private photo vault (`filesDir/vault/`), and encrypted local backup/restore.</li>
+                            <li><strong>Security & Stability</strong>: Salt-based app passcode protection, encrypted local storage (EncryptedSharedPreferences).</li>
+                            <li><strong>Customer Support</strong>: Handling user inquiries and technical assistance (<a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a>).</li>
+                            <li><strong>App Diagnostics</strong>: Anonymized crash logs and performance analytics to optimize service quality.</li>
+                        </ul>
+
+                        <h2>2. Categories of Processed Data & Collection Methods</h2>
+                        <p>TravelMoney operates under a strict On-Device Local-First policy where your data is stored on your local device.</p>
+                        <ul>
+                            <li><strong>Location Data (ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION)</strong>: Device GPS data used exclusively for footprint logging and map visualization upon explicit user interaction.</li>
+                            <li><strong>Media & Camera Permissions (CAMERA, READ_MEDIA_IMAGES)</strong>: Camera access for OCR receipt scanning and gallery access for attaching photos.</li>
+                            <li><strong>Photo Vault & Encrypted Credentials</strong>: Original vault photos stay in isolated app storage; passcode hashes are kept in secure device storage.</li>
+                            <li><strong>Financial & Expense Inputs</strong>: User-entered expense amounts, budgets, and payment methods kept solely inside local Room DB.</li>
+                            <li><strong>Device & Billing Info</strong>: App version, device model, OS version, and Google Play transaction IDs for verifying Lifetime Premium entitlement.</li>
+                            <li><strong>Diagnostics & Analytics</strong>: Anonymized technical diagnostic logs via Google Firebase (Crashlytics, Analytics, Remote Config, Performance Monitoring).</li>
+                        </ul>
+
+                        <h2>3. Third-Party Services & Entrustment</h2>
+                        <p>We do not sell personal data. The following external service providers are integrated to provide functionality:</p>
+                        <ul>
+                            <li><strong>Google Play Billing</strong>: In-app purchase processing and Lifetime Premium entitlement checks.</li>
+                            <li><strong>Google Firebase</strong>: Crashlytics for crash reports, Analytics & Remote Config for performance optimization, and Performance Monitoring.</li>
+                            <li><strong>Open Exchange Rates API & Map Services</strong>: Real-time currency exchange rates and map tile rendering (anonymous API calls).</li>
+                        </ul>
+
+                        <h2>4. Data Retention & Local Storage</h2>
+                        <p>All primary trip data is saved on your device's Local Storage. Because we do not upload your data to external servers, uninstalling the app or clearing app data instantly and permanently wipes all records.</p>
+
+                        <h2>5. Limitation of Liability</h2>
+                        <p>Since data remains strictly on your device, the Developer is not liable for data loss caused by hardware failure, lost devices, unperformed local backups, or forgotten passcodes.</p>
+
+                        <h2>6. Privacy Officer & Support Contact</h2>
+                        <p>For any privacy inquiries or technical support, please contact us at:</p>
+                        <ul>
+                            <li><strong>Developer / Studio</strong>: FlosisLab</li>
+                            <li><strong>Email Support</strong>: <a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ================= Japanese Policy ================= -->
+                    <div id="policy-ja" class="policy-lang-block" style="display: none;">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <img src="../assets/images/app-icon.webp" alt="TravelMoney Icon" style="width: 52px; height: 52px; border-radius: 12px; border: 2px solid var(--tech-black);">
+                            <div>
+                                <h1>プライバシーポリシー (TravelMoney)</h1>
+                                <p style="font-weight: 800; color: var(--tech-orange); margin-top: 4px;">開発者: FlosisLab | 最終改訂日: 2026年10月3일</p>
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>FlosisLab</strong>（以下「開発者」）は、TravelMoneyアプリにおける個人情報およびアクセス権限の取り扱いについて以下の通り規定いたします。
+                        </p>
+
+                        <h2>1. 個人情報の処理目的</h2>
+                        <ul>
+                            <li><strong>旅行記録の管理</strong>: 日程、支出・収入履歴、カテゴリ分類、割り勘精算、足跡マップの記録</li>
+                            <li><strong>サービス提供および機能実行</strong>: オンデバイスAIレシートスキャン(Google ML Kit)、リアルタイム為替計算、位置情報足跡マップ(OpenStreetMap/Google Maps)、写真保管庫Vaultの分離保存、暗号化バックアップ・復元</li>
+                            <li><strong>セキュリティおよび安定性</strong>: Saltベースのアプリパスワードロック、暗号化ストレージ保管</li>
+                            <li><strong>お問い合わせ対応</strong>: バグ修正およびカスタマーサポート (<a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a>)</li>
+                            <li><strong>品質改善</strong>: 匿名クラッシュログおよびパフォーマンス分析</li>
+                        </ul>
+
+                        <h2>2. 処理する個人情報の項目および収集方法</h2>
+                        <p>本アプリはデータを外部サーバーへ送信せず端末内（On-Device）にのみ保持するローカルファースト原則に従います。</p>
+
+                        <ul>
+                            <li><strong>位置情報 (ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION)</strong>: 足跡記録およびマップ表示用の端末GPS情報（明示的な操作時のみ取得）</li>
+                            <li><strong>カメラ・メディア権限 (CAMERA, READ_MEDIA_IMAGES)</strong>: レシート撮影および写真添付用のストレージアクセス</li>
+                            <li><strong>写真保管庫 Vault & 暗号化データ</strong>: 写真保管庫データはアプリ専用領域に隔離保存され、パスワードは暗号化領域に保管されます</li>
+                            <li><strong>手動入力データ</strong>: ユーザーが入力した金額、予算、決済方法（端末内 Room DB にのみ保管）</li>
+                            <li><strong>端末および決済情報</strong>: アプリバージョン、OSバージョン、Google Play購入確認トークン</li>
+                            <li><strong>診断およびパフォーマンスデータ</strong>: Google Firebase (Crashlytics, Analytics) による匿名診断ログ</li>
+                        </ul>
+
+                        <h2>3. 第三者提供および外部サービスの利用</h2>
+                        <p>個人情報を第三者へ販売・提供することはありません。機能提供のため以下のサービスを利用しています。</p>
+                        <ul>
+                            <li><strong>Google Play 決済 (In-App Billing)</strong>: アプリ内課金およびプレミアムライセンス確認</li>
+                            <li><strong>Google Firebase</strong>: Crashlytics (クラッシュ分析), Analytics (匿名利用統計), Performance Monitoring (パフォーマンス診断)</li>
+                            <li><strong>Open Exchange Rates API & 地図サービス</strong>: 為替レート取得およびマップ表示（匿名API呼び出し）</li>
+                        </ul>
+
+                        <h2>4. 個人情報の保有および利用期間（ローカル保存）</h2>
+                        <p>旅行データは端末内ローカルストレージにのみ保存されます。サーバーへ保存しないため、アプリを削除すると全データが直ちに完全に消去されます。</p>
+
+                        <h2>5. 免責事項およびユーザーの責任</h2>
+                        <p>データが端末内に保存されるため、端末の紛失、アプリ削除、パスワード紛失、バックアップ未実施によるデータ損害について開発者は責任を負いません。</p>
+
+                        <h2>6. お問い合わせ</h2>
+                        <ul>
+                            <li><strong>開発者 / ブランド</strong>: FlosisLab</li>
+                            <li><strong>メールアドレス</strong>: <a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer Grid -->
+            <footer class="footer-grid">
+                <div class="footer-links">
+                    <a href="privacy-policy.html" data-i18n="navPrivacy">TravelMoney 개인정보 처리방침</a>
+                    <span>|</span>
+                    <a href="terms.html" data-i18n="navTerms">TravelMoney 이용약관</a>
+                    <span>|</span>
+                    <a href="mailto:flosislab@gmail.com" data-i18n="navSupport">문의하기 (Support)</a>
+                </div>
+                <p data-i18n="footerRights">© 2026 FlosisLab. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

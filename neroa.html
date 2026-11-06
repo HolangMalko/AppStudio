@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neroa - FlosisLab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="assets/images/app-icon.webp">
+</head>
+<body>
+
+    <div class="grid-frame">
+        <div class="container-grid">
+            <!-- Header Navbar -->
+            <header class="navbar-grid">
+                <a href="index.html" class="nav-brand">
+                    <img src="assets/images/main_icon.webp" alt="FlosisLab Logo">
+                    <span data-i18n="brandName">FLOSISLAB</span>
+                    <span style="font-size: 0.75rem; background: var(--tech-orange); color: #fff; padding: 2px 6px; border-radius: 3px; font-weight: 800; margin-left: 4px;">NEROA</span>
+                </a>
+                <div class="nav-equalizer-box">
+                    <div class="smile-eq-group">
+                        <div class="pixel-smile-badge">☻</div>
+                        <div class="eq-bars-container-tall">
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                        </div>
+                    </div>
+                    <span class="eq-status-label" id="realtime-clock-display">SEOUL 20:59:15</span>
+                </div>
+                <div class="nav-actions">
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="ko">KR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ja">JP</button>
+                    </div>
+                    <a href="index.html" class="btn-orange" data-i18n="backToMain">← 메인으로</a>
+                </div>
+            </header>
+
+            <!-- Main Container -->
+            <main>
+                <!-- Hero Section -->
+                <section class="hero-tech-grid square-corner">
+                    <div class="hero-giant-title">
+                        <img src="neroa/assets/neroa.webp" alt="Neroa Icon" style="width: 64px; height: 64px; border-radius: 14px; object-fit: cover; border: 2px solid var(--tech-black); flex-shrink: 0;">
+                        <span>Neroa</span>
+                    </div>
+                    <div class="hero-sub-grid">
+                        <div class="hero-sub-box">
+                            <span style="font-weight: 800; color: var(--tech-orange); font-size: 0.85rem;">[DIGITAL PHOTO FRAME]</span>
+                            <p class="hero-subtitle">
+                                소중한 추억을 비추는 감성 디지털 액자 애플리케이션.
+                            </p>
+                        </div>
+                        <div class="hero-sub-box" style="align-items: flex-end; justify-content: center;">
+                            <a href="#" class="btn-orange" onclick="alert('Google Play Store 출시 준비 중입니다!'); return false;" style="width: 100%; text-align: center; justify-content: center;">
+                                <span>🛒 Google Play 다운로드 (준비 중)</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Core Features Grid -->
+                <div class="bento-section-title">
+                    <span data-i18n="sectionFeaturesTitle">주요 기능 (CORE FEATURES)</span>
+                    <span style="font-size: 0.85rem; color: var(--tech-orange); font-weight: 800;">:: FUNCTIONALITY</span>
+                </div>
+
+                <section class="section-content-padding" style="background: var(--tech-card); border-bottom: 1px solid var(--tech-border);">
+                    <div class="bento-spec-grid">
+                        <div class="bento-spec-item" style="padding: 24px;">
+                            <div style="font-size: 1.6rem; margin-bottom: 10px;">📲</div>
+                            <h5 style="font-size: 1.1rem; margin-bottom: 6px;">로컬 Wi-Fi QR 전송</h5>
+                            <p style="font-size: 0.9rem;">스마트폰으로 QR 코드를 스캔하여 외부 서버 전송 없이 로컬 Wi-Fi로 사진을 무선 즉시 전송합니다.</p>
+                        </div>
+                        <div class="bento-spec-item" style="padding: 24px;">
+                            <div style="font-size: 1.6rem; margin-bottom: 10px;">🕰️</div>
+                            <h5 style="font-size: 1.1rem; margin-bottom: 6px;">다양한 위젯 & 3x3 위치 이동</h5>
+                            <p style="font-size: 0.9rem;">시계, 날짜, 실시간 날씨, 캘린더, 비디오 위젯을 3x3 화면 어디든 자유롭게 배치할 수 있습니다.</p>
+                        </div>
+                        <div class="bento-spec-item" style="padding: 24px;">
+                            <div style="font-size: 1.6rem; margin-bottom: 10px;">🎵</div>
+                            <h5 style="font-size: 1.1rem; margin-bottom: 6px;">감성 BGM & 자연 ASMR</h5>
+                            <p style="font-size: 0.9rem;">내 음악 재생은 물론 빗소리, 파도소리, 모닥불, 숲속 소리 등 감성 ASMR 배경 음악을 제공합니다.</p>
+                        </div>
+                        <div class="bento-spec-item" style="padding: 24px;">
+                            <div style="font-size: 1.6rem; margin-bottom: 10px;">⏰</div>
+                            <h5 style="font-size: 1.1rem; margin-bottom: 6px;">자동 실행 & 스케줄링</h5>
+                            <p style="font-size: 0.9rem;">부팅/충전시 자동 슬라이드쇼 시작 및 매일 정해진 시간에 켜지고 꺼지는 자동 스케줄을 지원합니다.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- User Guide Section Link -->
+                <section class="section-content-padding" style="text-align: center; background: var(--tech-surface); border-bottom: 1px solid var(--tech-border);">
+                    <h2 style="font-size: 1.4rem; font-family: var(--font-heading); font-weight: 900; margin-bottom: 10px; color: var(--tech-black);">📖 Neroa 전체 이용 가이드</h2>
+                    <p style="font-size: 0.95rem; color: var(--tech-text-muted); margin-bottom: 24px;">사진 앨범 설정부터 Wi-Fi QR 스마트폰 전송, 위젯 배치 방법까지 상세한 안내를 확인하세요.</p>
+                    <a href="neroa/guide.html" class="btn-orange" style="padding: 12px 32px; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center;">
+                        <span data-i18n="btnDetailedGuide">📖 전체 가이드 보기</span>
+                    </a>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer-grid">
+                <div class="footer-links">
+                    <a href="neroa/privacy-policy.html" data-i18n="navNeroaPrivacy">Neroa 개인정보 처리방침</a>
+                    <span>|</span>
+                    <a href="neroa/terms.html" data-i18n="navNeroaTerms">Neroa 이용약관</a>
+                    <span>|</span>
+                    <a href="neroa/guide.html" data-i18n="navNeroaGuide">Neroa 가이드</a>
+                    <span>|</span>
+                    <a href="mailto:flosislab@gmail.com" data-i18n="navSupport">문의하기 (Support)</a>
+                </div>
+                <p data-i18n="footerRights">© 2026 FlosisLab. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
