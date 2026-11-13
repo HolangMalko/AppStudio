@@ -1,3 +1,224 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Neroa | FlosisLab</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/png" href="assets/neroa.webp">
+</head>
+<body>
+
+    <div class="grid-frame">
+        <div class="container-grid">
+
+            <!-- Navbar Grid -->
+            <header class="navbar-grid">
+                <a href="neroa.html" class="nav-brand">
+                    <img src="../assets/images/main_icon.webp" alt="FlosisLab Logo">
+                    <span data-i18n="brandName">FLOSISLAB</span>
+                </a>
+
+                <!-- Dynamic Center Box: Pixel Smile + Equalizer (Close), Digital Clock (Far Gap) -->
+                <div class="nav-equalizer-box">
+                    <div class="smile-eq-group">
+                        <div class="pixel-smile-badge">☻</div>
+                        <div class="eq-bars-container-tall">
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                        </div>
+                    </div>
+                    <span class="eq-status-label" id="realtime-clock-display">SEOUL 20:59:15</span>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="ko">KR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ja">JP</button>
+                    </div>
+                    <a href="neroa.html" class="btn-orange" data-i18n="backToNeroa">← 메인으로</a>
+                </div>
+            </header>
+
+            <div class="policy-container">
+                <div class="policy-card-tech square-corner">
+
+                    <!-- ================= Korean Policy ================= -->
+                    <div id="policy-ko" class="policy-lang-block">
+                        <h1>개인정보 처리방침 (Neroa)</h1>
+                        <p style="font-weight: 800; color: var(--tech-black); margin-bottom: 24px;">개발자: FlosisLab | 최종 개정일: 2026년 11월 13일</p>
+
+                        <p>
+                            <strong>FlosisLab</strong>(이하 "개발자")은(는) 디지털 액자 애플리케이션 <strong>Neroa</strong>(이하 "앱") 이용자의 개인정보 및 미디어 권한을 보호하며, 관련 법령을 준수합니다. 본 개인정보 처리방침은 Neroa 앱 이용 시 개인정보 및 접근 권한이 어떻게 관리되는지 투명하게 설명합니다.
+                        </p>
+
+                        <h2>1. 로컬 우선 원칙 (100% 온디바이스 저장)</h2>
+                        <p>
+                            Neroa 앱은 사용자의 소중한 추억과 사진, 동영상 콘텐츠를 중앙 개발자 서버로 무단 수집하거나 저장하지 않는 <strong>로컬 우선(On-Device Local-First)</strong> 정책을 따릅니다. 사용자가 등록한 앨범, 사진, 동영상, 음악 파일 및 앱 설정값은 사용자 단말기 내부에만 안전하게 저장됩니다.
+                        </p>
+
+                        <h2>2. 처리하는 데이터 및 접근 권한</h2>
+                        <ul>
+                            <li><strong>미디어 및 저장공간 권한 (READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO, READ_EXTERNAL_STORAGE)</strong>: 사용자가 지정한 사진, 동영상 및 배경음악 파일을 로컬 슬라이드쇼 및 재생목록으로 표출하기 위해 사용됩니다.</li>
+                            <li><strong>안드로이드 시스템 포토 피커 (Android System Photo Picker)</strong>: 넓은 미디어 권한 허용 없이 사용자가 안전하게 선택한 특정 사진만 앱에 등록할 수 있도록 안드로이드 표준 포토 피커 및 클라우드 미디어 서비스 UI를 활용합니다.</li>
+                            <li><strong>위치 정보 및 날씨 데이터 (ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION)</strong>: 사용자의 현재 위치 기반 실시간 날씨 위젯 정보를 조회하기 위해 사용됩니다. 위치 정보는 기기 GPS 또는 IP 기반 조회(GeoIP)를 활용하며, 외부 서버에 위치 이력이 저장되거나 추적되지 않습니다.</li>
+                            <li><strong>캘린더 일정 권한 (READ_CALENDAR)</strong>: 캘린더 위젯에 기기 내 일정을 표출하기 위해 사용되며, 100% 단말기 내부에서만 조회 처리됩니다.</li>
+                            <li><strong>알림 및 자동 실행 권한 (POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED, SCHEDULE_EXACT_ALARM, SYSTEM_ALERT_WINDOW)</strong>: 앱 자동 시작/종료 타이머, 부팅 시 자동 실행, 잠금화면 표시 및 포그라운드 미디어 재생 서비스 상태를 안내하기 위해 사용됩니다.</li>
+                            <li><strong>구글 드라이브(Google Drive) 연동 데이터</strong>: 사용자가 직접 선택한 Google Drive 클라우드 사진 폴더를 조회하고, 네트워크 연결이 불안정한 환경에서도 부드러운 슬라이드쇼 렌더링(60fps)을 제공하기 위해 기기 내부 전용 저장소에 보안 캐싱하여 슬라이드쇼로 표출하는 용도로만 사용됩니다. 계정 인증 토큰은 단말기 내 암호화 저장소에 안전하게 보관되며 외부로 유출되거나 공유되지 않습니다.</li>
+                            <li><strong>인앱 결제 데이터 (Google Play Billing)</strong>: 프리미엄 소장권 구매 상태 및 복원 확인을 위해 Google Play 서비스에서 제공하는 결제 ID 및 트랜잭션 토큰만 조회합니다.</li>
+                            <li><strong>웹 리모컨 및 파이어베이스 클라우드 데이터 (Firebase Realtime Database & Auth)</strong>: 동일 로컬 Wi-Fi 또는 웹 대시보드를 통한 원격 제어 시 기기 상태(재생/일시정지, 슬라이드쇼 설정, 사용자 공지 문구)만 파이어베이스 실시간 데이터베이스를 통해 중계되며, 익명 인증(Anonymous Auth) 및 데이터베이스 보안 규칙을 통해 안전하게 암호화 관리됩니다. 사용자의 실제 사진이나 동영상 파일은 파이어베이스 서버로 전송되지 않습니다.</li>
+                            <li><strong>온디바이스 얼굴 검출 (ML Kit Face Detection)</strong>: 이미지 스마트 크롭 및 모션 효과(Ken Burns & Face Zoom) 구도를 계산하기 위해 기기 내부에서만 온디바이스(On-Device)로 로컬 실행되며, 생체 인식 데이터나 얼굴 정보를 외부에 저장하거나 전송하지 않습니다.</li>
+                        </ul>
+
+                        <h2>3. 제3자 서비스 이용 및 위탁</h2>
+                        <p>개발자는 어떠한 경우에도 사용자의 개인 미디어 데이터를 제3자에게 판매하거나 외부로 유출하지 않습니다. 서비스 제공을 위해 이용되는 제3자 API 및 라이브러리 서비스는 다음과 같습니다.</p>
+                        <ul>
+                            <li><strong>Google Play Services & Billing</strong>: 구글 계정 인증, 시스템 포토 피커, 인앱 결제 처리 및 구매 복원</li>
+                            <li><strong>Google Drive API</strong>: 사용자가 지정한 클라우드 사진 폴더의 조회 및 슬라이드쇼 캐싱</li>
+                            <li><strong>Google Firebase (Realtime Database, Authentication, Analytics, Performance)</strong>: 웹 리모컨 기기 상태 중계, 익명 인증 처리, 오류 진단 및 파이프라인 성능 최적화</li>
+                            <li><strong>Google ML Kit Vision</strong>: 온디바이스 구도 보정 및 스마트 크롭 연산</li>
+                            <li><strong>Open-Meteo Weather API & ip-api.com</strong>: 위치 기반 실시간 기상 예보 및 위치 정보 조회</li>
+                        </ul>
+
+                        <h2>4. 데이터 파기 및 관리 권한</h2>
+                        <p>
+                            사용자는 언제든지 앱 내부 설정에서 등록된 앨범이나 사진, 연동 계정을 직접 삭제 및 해제할 수 있습니다. 앱을 삭제하거나 단말기 데이터를 초기화할 경우, 기기 내에 저장된 모든 Neroa 설정 및 캐시 파일은 즉시 완벽히 파기됩니다.
+                        </p>
+
+                        <h2>5. 문의처</h2>
+                        <p>개인정보 처리방침 관련 문의나 기술 지원이 필요하신 경우 아래로 연락주시기 바랍니다.</p>
+                        <ul>
+                            <li><strong>이메일</strong>: <a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ================= English Policy ================= -->
+                    <div id="policy-en" class="policy-lang-block" style="display: none;">
+                        <h1>Privacy Policy (Neroa)</h1>
+                        <p style="font-weight: 800; color: var(--tech-black); margin-bottom: 24px;">Developer: FlosisLab | Effective Date: November 13, 2026</p>
+
+                        <p>
+                            <strong>FlosisLab</strong> ("Developer") respects your privacy regarding the digital photo frame application <strong>Neroa</strong> ("App"). This Privacy Policy transparently explains how your data and permissions are handled.
+                        </p>
+
+                        <h2>1. On-Device Local-First Principle</h2>
+                        <p>
+                            Neroa strictly operates under an <strong>On-Device Local-First</strong> policy. Your photos, videos, music files, custom albums, and preferences are stored exclusively on your local device and are never uploaded to any central developer server.
+                        </p>
+
+                        <h2>2. Processed Data and App Permissions</h2>
+                        <ul>
+                            <li><strong>Media Storage Permissions (READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO, READ_EXTERNAL_STORAGE)</strong>: Used to fetch and display user-selected photos, videos, and ambient background music for local slideshows.</li>
+                            <li><strong>Android System Photo Picker</strong>: Utilizes the official Android System Photo Picker UI so you can securely pick specific photos without granting broad media storage access.</li>
+                            <li><strong>Location & Weather Data (ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION)</strong>: Used to fetch real-time weather widget data for your location via IP geolocation or device GPS. Location history is never stored or tracked.</li>
+                            <li><strong>Calendar Permission (READ_CALENDAR)</strong>: Used to display local events on the Calendar widget, processed 100% on-device.</li>
+                            <li><strong>Notification & Auto-Start Permissions (POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED, SCHEDULE_EXACT_ALARM, SYSTEM_ALERT_WINDOW)</strong>: Used for timer schedules, boot auto-launch, display over lock screen, and foreground media playback notifications.</li>
+                            <li><strong>Google Drive Cloud Sync</strong>: Read-only access is used exclusively to fetch photo folders you select upon explicit login. Photos are securely cached into private local storage to ensure smooth 60fps slideshow rendering even under unstable network conditions. Authentication tokens are encrypted on-device.</li>
+                            <li><strong>In-App Purchases (Google Play Billing)</strong>: Queries transaction tokens via Google Play Services strictly to verify and restore your Lifetime Premium entitlement.</li>
+                            <li><strong>Web Remote & Firebase Cloud Data (Firebase Realtime Database & Auth)</strong>: Relays frame status (play/pause, slideshow settings, custom marquee text) securely over Firebase Realtime Database with Anonymous Authentication and strict database rules. Your actual photo and video files are never uploaded to Firebase servers.</li>
+                            <li><strong>On-Device Face Detection (ML Kit)</strong>: Runs 100% locally on-device to compute smart crop focal points for Ken Burns camera motion and Face Zoom effects. No biometric data is stored or transmitted.</li>
+                        </ul>
+
+                        <h2>3. Third-Party Services</h2>
+                        <p>We do not sell or share your personal media files. The following third-party API services are utilized solely for core app functionality:</p>
+                        <ul>
+                            <li><strong>Google Play Services & Billing</strong>: Authentication, System Photo Picker, in-app purchases, and purchase restoration</li>
+                            <li><strong>Google Drive API</strong>: Read-only access and local caching for user-selected cloud photo folders</li>
+                            <li><strong>Google Firebase (Realtime Database, Authentication, Analytics, Performance)</strong>: Remote control command relaying, anonymous authentication, diagnostic logs, and performance optimization</li>
+                            <li><strong>Google ML Kit Vision</strong>: On-device composition analysis and smart crop calculations</li>
+                            <li><strong>Open-Meteo Weather API & ip-api.com</strong>: Real-time location weather forecasts</li>
+                        </ul>
+
+                        <h2>4. Data Retention & Deletion</h2>
+                        <p>
+                            You can delete albums or unlink accounts inside the app settings anytime. Uninstalling the app completely wipes all local Neroa configuration and cached data immediately.
+                        </p>
+
+                        <h2>5. Contact Information</h2>
+                        <p>If you have any questions regarding this Privacy Policy, please contact us at:</p>
+                        <ul>
+                            <li><strong>Email Support</strong>: <a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ================= Japanese Policy ================= -->
+                    <div id="policy-ja" class="policy-lang-block" style="display: none;">
+                        <h1>プライバシーポリシー (Neroa)</h1>
+                        <p style="font-weight: 800; color: var(--tech-black); margin-bottom: 24px;">開発者: FlosisLab | 最終改訂日: 2026年11月13日</p>
+
+                        <p>
+                            <strong>FlosisLab</strong>（以下「開発者」）は、デジタルフォトフレームアプリ<strong>Neroa</strong>（以下「本アプリ」）の利用者の個人情報およびメディア権限を保護し、関連法令を遵守いたします。
+                        </p>
+
+                        <h2>1. 完全ローカル（On-Device）原則</h2>
+                        <p>
+                            Neroaは、お客様の貴重な写真やデータを外部サーバーへ無断送信・収集しない<strong>オンデバイス（ローカルファースト）</strong>原則に従っています。登録されたアルバム、写真、動画、音楽ファイル、設定情報は端末内にのみ安全に保存されます。
+                        </p>
+
+                        <h2>2. 処理するデータとアクセス権限</h2>
+                        <ul>
+                            <li><strong>メディアストレージ権限 (READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO)</strong>: お客様が選択した写真、動画、BGM音楽ファイルをローカル再生・スライドショー表示するために使用します。</li>
+                            <li><strong>Androidシステムフォトピッカー (System Photo Picker)</strong>: 全権限を付与することなく、選択した写真のみを安全に登録できるよう標準フォトピッカーUIを使用します。</li>
+                            <li><strong>位置情報・天気データ (ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION)</strong>: 現在地に基づくリアルタイム天気ウィジェット情報の取得に使用します。位置履歴は追跡・保存されません。</li>
+                            <li><strong>カレンダー権限 (READ_CALENDAR)</strong>: カレンダーウィジェットに端末内の予定を表示するために使用します。100%端末内でのみ処理されます。</li>
+                            <li><strong>通知・自動起動権限 (POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED, SCHEDULE_EXACT_ALARM, SYSTEM_ALERT_WINDOW)</strong>: タイマー予約、端末起動時の自動実行、ロック画面上の表示、フォアグラウンド再生状態の通知に使用します。</li>
+                            <li><strong>Google Drive 連携</strong>: お客様が選択したクラウド写真フォルダを参照し、安定したスライドショー再生(60fps)を提供するため端末内専用ストレージに安全にキャッシュ表示します。認証トークンは端末内の暗号化ストレージに保管されます。</li>
+                            <li><strong>アプリ内決済（Google Play Billing）</strong>: プレミアムライセンスの購入状態確認および復元のために使用されます。</li>
+                            <li><strong>WebリモコンおよびFirebaseクラウドデータ (Firebase Realtime Database & Auth)</strong>: リモコン操作時、端末状態（再生/一時停止、設定値、お知らせテキスト）のみがFirebaseで中継されます。写真や動画ファイル自体がFirebaseサーバーへ送信されることはありません。</li>
+                            <li><strong>オンデバイス顔検出 (ML Kit)</strong>: 画像のスマートクロップおよびモーション効果（Ken Burns & Face Zoom）の構図計算のため端末内でのみ処理され、生体データが外部に送信されることはありません。</li>
+                        </ul>
+
+                        <h2>3. 第三者サービスの利用</h2>
+                        <p>お客様の写真データを第三者へ販売・提供することは一切ありません。機能提供のため以下のサードパーティサービスを利用しています。</p>
+                        <ul>
+                            <li><strong>Google Play Services & Billing</strong>: アカウント認証、システムフォトピッカー、アプリ内決済処理および購入復元</li>
+                            <li><strong>Google Drive API</strong>: お客様指定のフォトアルバム参照およびスライドショー用キャッシュ</li>
+                            <li><strong>Google Firebase (Realtime Database, Authentication, Analytics, Performance)</strong>: リモコンコマンドの中継、匿名認証処理、エラー診断およびパフォーマンス最適化</li>
+                            <li><strong>Google ML Kit Vision</strong>: 端末内構図補正およびスマートクロップ演算</li>
+                            <li><strong>Open-Meteo Weather API & ip-api.com</strong>: 位置情報に基づくリアルタイム天気予報の取得</li>
+                        </ul>
+
+                        <h2>4. データの破棄・管理</h2>
+                        <p>
+                            アプリ内の設定からいつでもアルバムや連携アカウントを削除できます。アプリを削除すると端末内の設定データは直ちに完全に消去されます。
+                        </p>
+
+                        <h2>5. お問い合わせ</h2>
+                        <p>本ポリシーに関するご質問は、下記メールアドレスまでお問い合わせください。</p>
+                        <ul>
+                            <li><strong>メールアドレス</strong>: <a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Grid -->
+            <footer class="footer-grid">
+                <div class="footer-links">
+                    <a href="privacy-policy.html" data-i18n="neroaPrivacyTitle">Neroa 개인정보 처리방침</a>
+                    <span>|</span>
+                    <a href="terms.html" data-i18n="neroaTermsTitle">Neroa 이용약관</a>
+                    <span>|</span>
+                    <a href="mailto:flosislab@gmail.com" data-i18n="navSupport">문의하기 (Support)</a>
+                </div>
+                <p data-i18n="footerRights">© 2026 FlosisLab. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
+=======
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -211,3 +432,4 @@
     <script src="../script.js"></script>
 </body>
 </html>
+>>>>>>> 2c44a241467c7b69ac425c21701fa4e26ef7110c
