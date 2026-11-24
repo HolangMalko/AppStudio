@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Target Search Keywords & Descriptions -->
+    <title>Privacy Policy - Fintvo | FlosisLab</title>
+    <meta name="description" content="Fintvo 개인정보 처리방침. 100% 온디바이스 로컬 저장, 금융 자산 및 지출 데이터의 안전한 개인 관리 수칙.">
+    <meta name="author" content="FlosisLab">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/webp" href="../assets/images/app-icon.webp">
+</head>
+<body>
+
+    <div class="grid-frame">
+        <div class="container-grid">
+
+            <!-- Navbar Grid -->
+            <header class="navbar-grid">
+                <a href="../fintvo.html" class="nav-brand">
+                    <img src="../assets/images/main_icon.webp" alt="FlosisLab Logo">
+                    <span data-i18n="brandName">FLOSISLAB</span>
+                </a>
+
+                <!-- Dynamic Center Box: Equalizer & Realtime Clock -->
+                <div class="nav-equalizer-box">
+                    <div class="smile-eq-group">
+                        <div class="pixel-smile-badge">☻</div>
+                        <div class="eq-bars-container-tall">
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                            <div class="eq-bar-tall"></div>
+                        </div>
+                    </div>
+                    <span class="eq-status-label" id="realtime-clock-display">SEOUL 20:59:15</span>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="ko">KR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ja">JP</button>
+                    </div>
+                    <a href="../fintvo.html" class="btn-orange" data-i18n="backToMain">← 메인으로</a>
+                </div>
+            </header>
+
+            <div class="policy-container">
+                <div class="policy-card-tech square-corner">
+
+                    <!-- ================= Korean Policy ================= -->
+                    <div id="policy-ko" class="policy-lang-block">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <img src="../assets/images/app-icon.webp" alt="Fintvo Icon" style="width: 52px; height: 52px; border-radius: 12px; border: 2px solid var(--tech-black);">
+                            <div>
+                                <h1>개인정보 처리방침 (Fintvo)</h1>
+                                <p style="font-weight: 800; color: var(--tech-orange); margin-top: 4px;">개발자: FlosisLab | 최종 수정일: 2026년 11월 24일</p>
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>FlosisLab</strong>(이하 "개발자")은 이용자의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                        </p>
+
+                        <h2>1. 개인정보의 처리 목적</h2>
+                        <p>개발자는 다음의 목적을 위하여 최소한의 기능을 수행합니다.</p>
+                        <ul>
+                            <li><strong>자산 및 지출 내역 기록 관리</strong>: 사용자가 기입하는 예적금, 주식, 가상자산, 부동산, 대출 및 고정 지출 정보 기록</li>
+                            <li><strong>실시간 시세 연동</strong>: 주식 및 코인의 최신 평가 가치 조회를 위한 외부 오픈 시세 API 연동 (Naver Finance, Yahoo Finance, Upbit, Binance)</li>
+                            <li><strong>앱 보안 및 접근 제어</strong>: 4자리 PIN 비밀번호 및 단말기 생체 인증(Fingerprint/Face ID) 잠금 처리</li>
+                            <li><strong>데이터 직접 제어 및 백업</strong>: 사용자가 직접 수행하는 JSON 데이터 암호화 백업 및 복원, 데이터 전체 초기화 기능</li>
+                            <li><strong>고객 문의 및 지원</strong>: 서비스 이용 문의 및 기술 지원 대응 (flosislab@gmail.com)</li>
+                        </ul>
+
+                        <h2>2. 처리하는 개인정보의 항목 및 보관 방식</h2>
+                        <p>Fintvo는 사용자의 소중한 금융 및 자산 정보를 외부 서버로 수집하거나 전송하지 않는 <strong>100% 온디바이스(On-Device) 로컬 우선 방침</strong>을 따릅니다.</p>
+
+                        <ul>
+                            <li><strong>금융 및 자산 입력 데이터</strong>: 자산명, 금액, 이자율, 대출금, 메모 등 사용자가 기입하는 모든 데이터는 오직 단말기 내부 보안 데이터베이스(Room DB)에만 저장됩니다.</li>
+                            <li><strong>실시간 시세 요청 정보</strong>: 시세 조회를 위해 사용자 기기에서 직접 시세 서버로 익명 API 요청이 수행되며, 계좌 번호, 비밀번호, 본인 식별 정보는 일절 수집하거나 요구하지 않습니다.</li>
+                            <li><strong>앱 잠금 및 인증 정보</strong>: PIN 비밀번호 및 생체 인증 정보는 단말기 내부 보안 저장소(EncryptedSharedPreferences) 및 시스템 인증 서비스를 통해 안전하게 처리됩니다.</li>
+                        </ul>
+
+                        <h2>3. 제3자 제공 및 외부 서비스 이용</h2>
+                        <p>개발자는 원칙적으로 이용자의 개인 데이터를 제3자에게 판매하거나 외부에 제공하지 않습니다. 실시간 시세 조회를 위해 아래와 같은 오픈 API를 단말기 직접 호출 방식으로만 사용합니다.</p>
+                        <ul>
+                            <li><strong>공개 시세 API</strong>: Naver Finance, Yahoo Finance, Upbit, Binance Open API (익명 시세 조회)</li>
+                        </ul>
+
+                        <h2>4. 개인정보의 보유 및 파기 절차</h2>
+                        <p>Fintvo의 모든 자산 및 지출 데이터는 사용자의 단말기 내부 저장소에만 보관됩니다. 앱을 삭제하거나 설정의 '데이터 전체 초기화' 메뉴를 실행하는 즉시 기기 내의 모든 데이터는 영구 파기됩니다.</p>
+
+                        <h2>5. 책임의 한계 및 사용자 백업 권장</h2>
+                        <p>데이터가 사용자의 단말기 내부 저장소에만 보관되므로, 기기 분실, 단말기 고장, 앱 삭제, 백업 미실행으로 인한 데이터 손실에 대해 개발자는 책임을 지지 않습니다. 백업 기능을 활용해 정기적으로 데이터를 안전하게 보관하실 것을 권장합니다.</p>
+
+                        <h2>6. 개인정보 보호책임자 및 문의처</h2>
+                        <p>서비스 이용 중 발생하는 개인정보 보호 관련 문의사항은 아래 연락처로 문의해 주시기 바랍니다.</p>
+
+                        <ul>
+                            <li><strong>개발자/브랜드</strong>: FlosisLab</li>
+                            <li><strong>이메일 문의</strong>: <a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ================= English Policy ================= -->
+                    <div id="policy-en" class="policy-lang-block" style="display: none;">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <img src="../assets/images/app-icon.webp" alt="Fintvo Icon" style="width: 52px; height: 52px; border-radius: 12px; border: 2px solid var(--tech-black);">
+                            <div>
+                                <h1>Privacy Policy (Fintvo)</h1>
+                                <p style="font-weight: 800; color: var(--tech-orange); margin-top: 4px;">Developer: FlosisLab | Last Updated: November 24, 2026</p>
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>FlosisLab</strong> ("Developer") discloses this Privacy Policy to explain how personal financial data and app permissions are handled transparently for the Fintvo application.
+                        </p>
+
+                        <h2>1. Purpose of Processing Data</h2>
+                        <p>Fintvo processes data solely for providing local asset and expense management functions:</p>
+                        <ul>
+                            <li><strong>Asset & Expense Tracking</strong>: Recording user-entered savings, stocks, crypto, real estate, liabilities, and fixed expenses.</li>
+                            <li><strong>Live Market Quotes</strong>: Fetching real-time stock and cryptocurrency valuation updates via public open APIs (Naver, Yahoo, Upbit, Binance).</li>
+                            <li><strong>App Security</strong>: Local 4-digit PIN code and biometric authentication (Fingerprint/Face ID).</li>
+                            <li><strong>Data Control</strong>: Encrypted local JSON backup, restore, and complete data wipe capabilities.</li>
+                            <li><strong>Support</strong>: Handling inquiries and technical support (<a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a>).</li>
+                        </ul>
+
+                        <h2>2. Data Categories & Local Storage Policy</h2>
+                        <p>Fintvo operates under a strict <strong>100% On-Device Local-First policy</strong>. Your personal financial data is stored locally on your device and is never uploaded to any external developer server.</p>
+
+                        <ul>
+                            <li><strong>Financial & Asset Inputs</strong>: Asset names, amounts, interest rates, loans, and notes are stored exclusively in your device's local database (Room DB).</li>
+                            <li><strong>Market Quote Requests</strong>: Anonymous price queries are sent directly from your device to financial price endpoints. No bank account numbers, passwords, or personal identity info are ever requested or collected.</li>
+                            <li><strong>App Lock Credentials</strong>: Passcode hashes and biometric triggers are handled strictly within secure local device storage (EncryptedSharedPreferences).</li>
+                        </ul>
+
+                        <h2>3. Third-Party Services & Open APIs</h2>
+                        <p>We do not sell or share personal data with third parties. The app connects directly from your phone to public endpoints for market quotes:</p>
+                        <ul>
+                            <li><strong>Public Market APIs</strong>: Naver Finance, Yahoo Finance, Upbit, and Binance Open APIs (anonymous price queries).</li>
+                        </ul>
+
+                        <h2>4. Retention & Deletion</h2>
+                        <p>All records remain inside your device's local storage. Uninstalling the app or executing 'Reset All Data' in settings permanently and instantly wipes all local records.</p>
+
+                        <h2>5. Limitation of Liability</h2>
+                        <p>Because your data resides strictly on your local device, the Developer is not liable for data loss caused by hardware failure, lost phones, forgotten passcodes, or unperformed backups. Users are encouraged to perform regular JSON backups.</p>
+
+                        <h2>6. Privacy Officer & Support Contact</h2>
+                        <p>For any privacy inquiries or support, please contact us at:</p>
+                        <ul>
+                            <li><strong>Developer / Studio</strong>: FlosisLab</li>
+                            <li><strong>Email Support</strong>: <a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ================= Japanese Policy ================= -->
+                    <div id="policy-ja" class="policy-lang-block" style="display: none;">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <img src="../assets/images/app-icon.webp" alt="Fintvo Icon" style="width: 52px; height: 52px; border-radius: 12px; border: 2px solid var(--tech-black);">
+                            <div>
+                                <h1>プライバシーポリシー (Fintvo)</h1>
+                                <p style="font-weight: 800; color: var(--tech-orange); margin-top: 4px;">開発者: FlosisLab | 最終改訂日: 2026年11月24日</p>
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>FlosisLab</strong>（以下「開発者」）は、Fintvoアプリにおける個人情報およびデータの取り扱いについて以下の通り規定いたします。
+                        </p>
+
+                        <h2>1. 個人情報の処理目的</h2>
+                        <ul>
+                            <li><strong>資産・支出記録の管理</strong>: ユーザーが入力した預貯金、株式、仮想通貨、不動産、負債および固定支出の記録</li>
+                            <li><strong>リアルタイム相場表示</strong>: 株・暗号資産の最新評価額取得のための公開API連携（Naver Finance, Yahoo Finance, Upbit, Binance）</li>
+                            <li><strong>セキュリティおよびアクセス制御</strong>: 4桁PINコードおよび生体認証（指紋・顔認証）ロック処理</li>
+                            <li><strong>データ管理およびバックアップ</strong>: ユーザー自身による暗号化JSONバックアップ、復元、全データ初期化機能</li>
+                            <li><strong>お問い合わせ対応</strong>: 技術サポートおよびカスタマーサービス (<a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a>)</li>
+                        </ul>
+
+                        <h2>2. 処理する個人情報の項目および保管方針</h2>
+                        <p>本アプリはデータを外部サーバーへ送信せず端末内（On-Device）にのみ保持する<strong>100%ローカルファースト原則</strong>に従います。</p>
+
+                        <ul>
+                            <li><strong>資産・金融入力データ</strong>: 資産名、金額、金利、ローン残高、メモなど全データは端末内の安全なローカルデータベース（Room DB）にのみ保管されます。</li>
+                            <li><strong>リアルタイム相場リクエスト</strong>: 相場取得のため匿名リクエストが端末から直接送信されます。口座番号や暗号キー、個人識別情報を収集することはありません。</li>
+                            <li><strong>パスコード情報</strong>: PINパスコードおよび認証情報は端末内の暗号化領域（EncryptedSharedPreferences）で安全に処理されます。</li>
+                        </ul>
+
+                        <h2>3. 第三者提供および外部サービスの利用</h2>
+                        <p>個人情報を第三者へ販売・提供することはありません。公開相場情報の取得のため以下の公開APIのみを端末直接呼び出し方式で利用します。</p>
+                        <ul>
+                            <li><strong>公開相場API</strong>: Naver Finance, Yahoo Finance, Upbit, Binance Open API</li>
+                        </ul>
+
+                        <h2>4. 個人情報の保有および削除手順</h2>
+                        <p>全データは端末内ローカルストレージにのみ保存されます。アプリを削除するか設定の「全データ初期化」を実行すると、端末内の全データは即座に永久消去されます。</p>
+
+                        <h2>5. 免責事項およびユーザーの責任</h2>
+                        <p>データが端末内にのみ保存されるため、端末の紛失・故障、アプリ削除、パスコード紛失によるデータ損失について開発者は責任を負いません。定期的なバックアップを推奨します。</p>
+
+                        <h2>6. お問い合わせ</h2>
+                        <ul>
+                            <li><strong>開発者 / ブランド</strong>: FlosisLab</li>
+                            <li><strong>メールアドレス</strong>: <a href="mailto:flosislab@gmail.com" style="color: var(--tech-orange); font-weight: 800; text-decoration: none;">flosislab@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer Grid -->
+            <footer class="footer-grid">
+                <div class="footer-links">
+                    <a href="privacy-policy.html" data-i18n="navFintvoPrivacy">Fintvo 개인정보 처리방침</a>
+                    <span>|</span>
+                    <a href="terms.html" data-i18n="navFintvoTerms">Fintvo 이용약관</a>
+                    <span>|</span>
+                    <a href="mailto:flosislab@gmail.com" data-i18n="navSupport">문의하기 (Support)</a>
+                </div>
+                <p data-i18n="footerRights">© 2026 FlosisLab. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
